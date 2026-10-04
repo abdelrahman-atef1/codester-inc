@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فاتورة — Bold Executive Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #E63946;
+    --primary-dark: #C92F3B;
+    --primary-soft: #FDECEE;
+    --accent: #2A9D8F;
+    --accent-dark: #217E73;
+    --accent-soft: #E3F4F1;
+    --bg: #F1F5F9;
+    --surface: #FFFFFF;
+    --dark: #1E293B;
+    --dark-2: #334155;
+    --text: #0F172A;
+    --text-2: #475569;
+    --muted: #94A3B8;
+    --border: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --warn: #B45309;
+    --warn-soft: #FEF3C7;
+    --wa: #25D366;
+    --r-sm: 8px;
+    --r: 12px;
+    --r-lg: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: #E2E8F0;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  .num { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; display: inline-block; }
+  svg { display: block; }
+
+  /* ---------- Presentation page ---------- */
+  .page-head {
+    max-width: 1720px; margin: 0 auto; padding: 40px 32px 8px;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark {
+    width: 52px; height: 52px; border-radius: 14px; background: var(--primary);
+    display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 26px;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--border-strong);
+  }
+  .brand h1 { font-size: 30px; font-weight: 900; line-height: 1.1; }
+  .brand p { color: var(--text-2); font-size: 14px; font-weight: 600; }
+  .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+  .sw { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border-strong); border-radius: 999px; padding: 4px 6px 4px 12px; font-size: 12px; font-weight: 700; color: var(--text-2); }
+  .sw i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(15,23,42,.12); }
+
+  .stage {
+    max-width: 1720px; margin: 0 auto; padding: 28px 32px 56px;
+    display: flex; gap: 36px; justify-content: center; flex-wrap: wrap;
+  }
+  .shot { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .shot-label { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15px; color: var(--dark); }
+  .shot-label b { width: 26px; height: 26px; border-radius: 8px; background: var(--dark); color: #fff; display: grid; place-items: center; font-size: 13px; }
+
+  /* ---------- Phone ---------- */
+  .phone {
+    width: 390px; height: 844px; border-radius: 52px; background: #0B1120;
+    padding: 12px; box-shadow: 0 30px 60px -20px rgba(15,23,42,.45), 0 0 0 1px #334155 inset;
+    position: relative; flex-shrink: 0;
+  }
+  .screen {
+    width: 100%; height: 100%; border-radius: 41px; background: var(--bg);
+    overflow: hidden; position: relative; display: flex; flex-direction: column;
+  }
+  .island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 110px; height: 32px; background: #000; border-radius: 20px; z-index: 30; }
+  .statusbar {
+    height: 50px; padding: 14px 28px 0; display: flex; justify-content: space-between; align-items: center;
+    font-size: 15px; font-weight: 700; flex-shrink: 0; direction: ltr;
+  }
+  .statusbar .icons { display: flex; gap: 6px; align-items: center; }
+  .statusbar.on-dark { background: var(--dark); color: #fff; }
+
+  /* ---------- Shared app chrome ---------- */
+  .appbar { display: flex; align-items: center; justify-content: space-between; padding: 6px 18px 12px; flex-shrink: 0; }
+  .appbar.dark { background: var(--dark); color: #fff; }
+  .appbar h2 { font-size: 20px; font-weight: 800; line-height: 1.2; }
+  .appbar .sub { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .icon-btn {
+    width: 40px; height: 40px; border-radius: var(--r); border: 1px solid var(--border);
+    background: var(--surface); display: grid; place-items: center; color: var(--text); flex-shrink: 0;
+  }
+  .appbar.dark .icon-btn { background: var(--dark-2); border-color: #475569; color: #fff; }
+
+  .search-row { display: flex; gap: 8px; padding: 0 18px; flex-shrink: 0; }
+  .search {
+    flex: 1; height: 46px; background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--r); display: flex; align-items: center; gap: 10px; padding: 0 14px;
+    color: var(--muted); font-size: 14px; font-weight: 600;
+  }
+  .scan-btn { width: 46px; height: 46px; border-radius: var(--r); background: var(--dark); color: #fff; display: grid; place-items: center; flex-shrink: 0; }
+
+  .chips { display: flex; gap: 8px; padding: 12px 18px; overflow: hidden; flex-shrink: 0; }
+  .chip {
+    height: 34px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--border-strong);
+    background: var(--surface); font-size: 13px; font-weight: 700; color: var(--text-2);
+    display: flex; align-items: center; gap: 6px; white-space: nowrap;
+  }
+  .chip.active { background: var(--dark); border-color: var(--dark); color: #fff; }
+  .chip .count { font-size: 11px; background: var(--bg); color: var(--text-2); border-radius: 999px; padding: 0 7px; line-height: 18px; }
+  .chip.active .count { background: var(--primary); color: #fff; }
+
+  .bottom-nav {
+    height: 78px; background: var(--surface); border-top: 1px solid var(--border);
+    display: flex; justify-content: space-around; align-items: flex-start; padding-top: 10px; flex-shrink: 0;
+  }
+  .nav-item { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; font-weight: 700; color: var(--muted); width: 68px; }
+  .nav-item .ni { width: 48px; height: 30px; border-radius: 10px; display: grid; place-items: center; }
+  .nav-item.active { color: var(--primary); }
+  .nav-item.active .ni { background: var(--primary-soft); }
+
+  /* ---------- Screen 1: POS ---------- */
+  .pos-top { background: var(--dark); color: #fff; }
+  .shop-id { display: flex; align-items: center; gap: 10px; }
+  .shop-logo { width: 40px; height: 40px; border-radius: 11px; background: var(--primary); display: grid; place-items: center; font-weight: 900; font-size: 18px; color: #fff; }
+  .shop-id h2 { font-size: 17px; }
+  .shop-id .sub { color: #94A3B8; display: flex; gap: 6px; align-items: center; }
+  .offline-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; display: inline-block; }
+  .pos-search { background: var(--dark); padding-bottom: 14px; }
+  .pos-search .search { background: #fff; border-color: transparent; }
+  .pos-search .scan-btn { background: var(--primary); }
+
+  .grid-wrap { flex: 1; overflow: hidden; padding: 0 18px; }
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .pcard {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
+    padding: 8px; position: relative;
+  }
+  .pcard.in-cart { border: 2px solid var(--primary); padding: 7px; }
+  .pthumb { height: 52px; border-radius: 8px; display: grid; place-items: center; font-weight: 900; font-size: 18px; margin-bottom: 6px; }
+  .pname { font-size: 12px; font-weight: 700; line-height: 1.35; height: 32px; overflow: hidden; color: var(--text); }
+  .pprice { font-size: 13px; font-weight: 800; color: var(--text); margin-top: 2px; }
+  .pprice small { font-size: 10px; color: var(--muted); font-weight: 700; }
+  .qty-badge { position: absolute; top: -6px; left: -6px; min-width: 22px; height: 22px; border-radius: 11px; background: var(--primary); color: #fff; font-size: 12px; font-weight: 800; display: grid; place-items: center; border: 2px solid var(--bg); }
+
+  .cart {
+    background: var(--dark); color: #fff; border-radius: 22px 22px 0 0; padding: 10px 18px 14px; flex-shrink: 0;
+    box-shadow: 0 -10px 24px -12px rgba(15,23,42,.5);
+  }
+  .grabber { width: 40px; height: 4px; border-radius: 2px; background: #475569; margin: 0 auto 10px; }
+  .cart-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .cart-head h3 { font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .cart-head h3 span { background: var(--primary); font-size: 11px; border-radius: 999px; padding: 0 8px; line-height: 20px; }
+  .cart-head a { font-size: 12px; color: #94A3B8; font-weight: 700; }
+  .cart-line { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid #334155; }
+  .cart-line .nm { flex: 1; font-size: 13px; font-weight: 700; }
+  .cart-line .nm small { display: block; color: #94A3B8; font-weight: 600; font-size: 11px; line-height: 1.2; }
+  .stepper { display: flex; align-items: center; background: #334155; border-radius: 8px; height: 28px; }
+  .stepper b { width: 26px; text-align: center; font-size: 15px; color: #CBD5E1; }
+  .stepper span { min-width: 20px; text-align: center; font-size: 13px; font-weight: 800; }
+  .cart-line .lt { width: 64px; text-align: left; font-size: 13px; font-weight: 800; }
+  .checkout {
+    margin-top: 10px; height: 56px; border-radius: 14px; background: var(--primary);
+    display: flex; align-items: center; justify-content: space-between; padding: 0 18px;
+    box-shadow: 0 4px 0 var(--primary-dark);
+  }
+  .checkout .lbl { font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+  .checkout .amt { font-size: 20px; font-weight: 900; }
+  .checkout .amt small { font-size: 12px; font-weight: 700; opacity: .85; }
+
+  /* ---------- Screen 2: Invoice ---------- */
+  .inv-scroll { flex: 1; overflow: hidden; padding: 0 16px; }
+  .status-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 800; color: var(--accent-dark); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; }
+  .paper { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+  .paper-top { height: 6px; background: linear-gradient(90deg, var(--primary) 0 70%, var(--accent) 70% 100%); }
+  .paper-head { padding: 16px 16px 14px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px dashed var(--border-strong); }
+  .paper-shop { display: flex; gap: 10px; align-items: center; }
+  .paper-shop .shop-logo { width: 46px; height: 46px; font-size: 21px; border-radius: 12px; }
+  .paper-shop h3 { font-size: 16px; font-weight: 800; line-height: 1.25; }
+  .paper-shop p { font-size: 11px; color: var(--text-2); font-weight: 600; line-height: 1.5; }
+  .inv-no { text-align: left; }
+  .inv-no small { display: block; font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: .3px; }
+  .inv-no b { font-size: 15px; font-weight: 900; color: var(--primary); }
+  .meta { display: grid; grid-template-columns: 1fr 1fr; padding: 10px 16px; gap: 6px 12px; border-bottom: 1px solid var(--border); background: #F8FAFC; }
+  .meta div { font-size: 11px; color: var(--muted); font-weight: 700; }
+  .meta div b { display: block; font-size: 13px; color: var(--text); font-weight: 700; }
+  table.items { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.items th { font-size: 11px; color: var(--muted); font-weight: 700; padding: 10px 6px 6px; text-align: center; border-bottom: 1px solid var(--border); }
+  table.items th:first-child, table.items td:first-child { text-align: right; padding-right: 16px; }
+  table.items th:last-child, table.items td:last-child { text-align: left; padding-left: 16px; }
+  table.items td { padding: 8px 6px; text-align: center; font-weight: 600; border-bottom: 1px solid #F1F5F9; }
+  table.items td.num { display: table-cell; }
+  table.items td:first-child { font-weight: 700; }
+  table.items td:last-child { font-weight: 800; }
+  .totals { padding: 10px 16px 14px; }
+  .trow { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: var(--text-2); padding: 3px 0; }
+  .trow.disc { color: var(--accent-dark); }
+  .grand { margin-top: 8px; background: var(--dark); color: #fff; border-radius: var(--r); padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .grand span { font-size: 14px; font-weight: 700; }
+  .grand b { font-size: 22px; font-weight: 900; }
+  .grand b small { font-size: 12px; font-weight: 700; color: #CBD5E1; }
+  .paid-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 12px; font-weight: 700; color: var(--text-2); }
+  .paper-foot { border-top: 1px dashed var(--border-strong); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 600; color: var(--muted); }
+  .qr { width: 44px; height: 44px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; }
+  .qr i { background: var(--text); border-radius: 1px; }
+  .qr i.o { background: transparent; }
+
+  .inv-actions { padding: 12px 16px 26px; background: var(--surface); border-top: 1px solid var(--border); display: flex; gap: 10px; flex-shrink: 0; }
+  .btn { height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 800; }
+  .btn-wa { flex: 1.4; background: var(--accent); color: #fff; box-shadow: 0 4px 0 var(--accent-dark); }
+  .btn-print { flex: 1; background: var(--surface); color: var(--text); border: 2px solid var(--dark); }
+
+  /* ---------- Screen 3: Inventory ---------- */
+  .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 18px 4px; flex-shrink: 0; }
+  .mini { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 8px 10px; }
+  .mini small { display: block; font-size: 11px; color: var(--text-2); font-weight: 700; }
+  .mini b { font-size: 19px; font-weight: 900; }
+  .mini.alert { border-color: #F5B5BA; background: var(--primary-soft); }
+  .mini.alert b, .mini.alert small { color: var(--primary-dark); }
+  .inv-list { flex: 1; overflow: hidden; padding: 0 18px; display: flex; flex-direction: column; gap: 8px; position: relative; }
+  .icard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 11px 12px; display: flex; gap: 12px; align-items: center; }
+  .icard.low { border-color: #F5B5BA; box-shadow: inset -4px 0 0 var(--primary); }
+  .icard.out { box-shadow: inset -4px 0 0 var(--dark); }
+  .icard .pthumb { width: 46px; height: 46px; margin: 0; flex-shrink: 0; font-size: 17px; }
+  .icard .info { flex: 1; min-width: 0; }
+  .icard .info h4 { font-size: 14px; font-weight: 800; line-height: 1.3; }
+  .icard .info .sku { font-size: 11px; color: var(--muted); font-weight: 600; }
+  .stockbar { height: 5px; background: var(--bg); border-radius: 3px; margin-top: 6px; overflow: hidden; }
+  .stockbar i { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
+  .icard.low .stockbar i { background: var(--primary); }
+  .icard .side { text-align: left; flex-shrink: 0; }
+  .icard .side .price { font-size: 15px; font-weight: 900; }
+  .icard .side .price small { font-size: 10px; color: var(--muted); font-weight: 700; }
+  .stock-tag { font-size: 11px; font-weight: 800; border-radius: 6px; padding: 1px 7px; display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; }
+  .stock-ok { color: var(--accent-dark); background: var(--accent-soft); }
+  .stock-low { color: var(--primary-dark); background: var(--primary-soft); }
+  .stock-out { color: #fff; background: var(--dark); }
+  .fab {
+    position: absolute; left: 18px; bottom: 92px; height: 56px; padding: 0 20px 0 18px; border-radius: 18px;
+    background: var(--primary); color: #fff; display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 15px;
+    box-shadow: 0 4px 0 var(--primary-dark), 0 12px 24px -8px rgba(230,57,70,.55); z-index: 5;
+  }
+
+  /* ---------- Screen 4: Reports ---------- */
+  .seg { margin: 0 18px; background: #E2E8F0; border-radius: var(--r); padding: 4px; display: flex; flex-shrink: 0; }
+  .seg div { flex: 1; text-align: center; font-size: 13px; font-weight: 700; color: var(--text-2); height: 34px; line-height: 34px; border-radius: 9px; }
+  .seg div.on { background: var(--surface); color: var(--text); font-weight: 800; box-shadow: 0 1px 2px rgba(15,23,42,.12); }
+  .rep-scroll { flex: 1; overflow: hidden; padding: 12px 18px 0; display: flex; flex-direction: column; gap: 10px; }
+  .hero { background: var(--dark); color: #fff; border-radius: var(--r-lg); padding: 14px 16px; position: relative; overflow: hidden; }
+  .hero::after { content: ""; position: absolute; left: -30px; top: -30px; width: 120px; height: 120px; border-radius: 50%; border: 18px solid rgba(230,57,70,.18); }
+  .hero small { font-size: 12px; font-weight: 700; color: #94A3B8; }
+  .hero .big { font-size: 34px; font-weight: 900; line-height: 1.15; }
+  .hero .big small { font-size: 15px; color: #CBD5E1; }
+  .delta { display: inline-flex; align-items: center; gap: 4px; background: rgba(42,157,143,.2); color: #5EEAD4; font-size: 12px; font-weight: 800; border-radius: 6px; padding: 1px 8px; }
+  .hero .row { display: flex; align-items: center; gap: 8px; margin-top: 2px; font-size: 12px; color: #94A3B8; font-weight: 600; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 10px 12px; display: flex; gap: 10px; align-items: center; }
+  .kpi .ki { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; }
+  .kpi small { display: block; font-size: 11px; color: var(--text-2); font-weight: 700; line-height: 1.3; }
+  .kpi b { font-size: 18px; font-weight: 900; line-height: 1.3; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 12px 14px; }
+  .card-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .card-h h4 { font-size: 14px; font-weight: 800; }
+  .card-h span { font-size: 11px; font-weight: 700; color: var(--muted); }
+
+  .chart { position: relative; height: 128px; padding-top: 18px; }
+  .gridlines { position: absolute; inset: 18px 0 22px 0; display: flex; flex-direction: column; justify-content: space-between; }
+  .gridlines i { border-top: 1px dashed #E2E8F0; }
+  .bars { position: absolute; inset: 18px 0 0 0; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 4px; }
+  .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; position: relative; cursor: default; }
+  .bar { width: 22px; background: #CBD5E1; border-radius: 4px 4px 0 0; position: relative; transition: background .15s; }
+  .bar-col:hover .bar { background: #94A3B8; }
+  .bar-col.today .bar { background: var(--primary); }
+  .bar-col .day { font-size: 10.5px; font-weight: 700; color: var(--muted); height: 22px; line-height: 22px; }
+  .bar-col.today .day { color: var(--text); font-weight: 800; }
+  .bar-col .val { position: absolute; font-size: 10.5px; font-weight: 800; color: var(--text); white-space: nowrap; }
+  .tip { position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); background: var(--dark); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .12s; z-index: 3; }
+  .bar-col:not(.today):hover .tip { opacity: 1; }
+
+  .top-item { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid #F1F5F9; }
+  .top-item:first-of-type { border-top: 0; }
+  .rank { width: 24px; height: 24px; border-radius: 7px; background: var(--bg); font-size: 12px; font-weight: 900; display: grid; place-items: center; color: var(--text-2); flex-shrink: 0; }
+  .top-item:first-of-type .rank { background: var(--dark); color: #fff; }
+  .top-item .ti { flex: 1; min-width: 0; }
+  .top-item .ti b { font-size: 13px; font-weight: 800; display: block; line-height: 1.3; }
+  .top-item .ti .meter { height: 4px; border-radius: 2px; background: var(--bg); margin-top: 4px; overflow: hidden; }
+  .top-item .ti .meter i { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
+  .top-item .tv { text-align: left; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .top-item .tv small { display: block; font-size: 10.5px; color: var(--muted); font-weight: 700; }
+
+  .footnote { text-align: center; color: var(--text-2); font-size: 13px; font-weight: 600; padding: 0 0 40px; }
+</style>
+</head>
+<body>
+
+<!-- Reusable icon sprites -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+    <symbol id="i-barcode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 8v8M10 8v8M13 8v8M16 8v8"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+    <symbol id="i-pos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-invoice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h16"/><path d="M7 16v-5M12 16V6M17 16v-8"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36A9.43 9.43 0 1 1 12.04 21.5zm8.02-17.5A11.33 11.33 0 0 0 2.2 17.68L.6 23.5l5.95-1.56a11.3 11.3 0 0 0 5.48 1.4h.01A11.34 11.34 0 0 0 20.06 4z"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2h16v20l-4-2-4 2-4-2-4 2z"/><path d="M8 8h8M8 12h8"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M16 15h2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+    <symbol id="i-cloud-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l20 20"/><path d="M5.8 8.6A6 6 0 0 0 7 20h10M20.5 17.6A4.5 4.5 0 0 0 17 10h-1.3A7 7 0 0 0 9.4 5.2"/></symbol>
+    <symbol id="i-sb" viewBox="0 0 64 14"><rect x="0" y="7" width="3" height="5" rx="1" fill="currentColor"/><rect x="5" y="5" width="3" height="7" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="1" width="3" height="11" rx="1" fill="currentColor"/><rect x="34" y="1" width="24" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-opacity=".5"/><rect x="36" y="3" width="17" height="8" rx="2" fill="currentColor"/><rect x="59.5" y="5" width="2" height="4" rx="1" fill="currentColor" fill-opacity=".5"/></symbol>
+  </defs>
+</svg>
+
+<header class="page-head">
+  <div class="brand">
+    <div class="brand-mark">ف</div>
+    <div>
+      <h1>فاتورة — Bold Executive</h1>
+      <p>إعادة تصميم الواجهة · نقطة بيع + فواتير + مخزون للمشروعات الصغيرة · يعمل بدون إنترنت</p>
+    </div>
+  </div>
+  <div class="swatches">
+    <div class="sw"><i style="background:#E63946"></i>Primary #E63946</div>
+    <div class="sw"><i style="background:#2A9D8F"></i>Accent #2A9D8F</div>
+    <div class="sw"><i style="background:#1E293B"></i>Surface #1E293B</div>
+    <div class="sw"><i style="background:#F1F5F9"></i>Background #F1F5F9</div>
+    <div class="sw"><i style="background:#0F172A"></i>Text #0F172A</div>
+  </div>
+</header>
+
+<main class="stage">
+
+  <!-- ============ 1. POS ============ -->
+  <section class="shot">
+    <div class="shot-label"><b>1</b>نقطة البيع</div>
+    <div class="phone"><div class="screen">
+      <div class="island"></div>
+      <div class="statusbar on-dark"><span>9:41</span><span class="icons"><svg width="64" height="14"><use href="#i-sb"/></svg></span></div>
+
+      <div class="appbar dark pos-top">
+        <div class="shop-id">
+          <div class="shop-logo">أ</div>
+          <div>
+            <h2>بقالة الأمل</h2>
+            <div class="sub"><span class="offline-dot"></span>السبت، 3 أكتوبر · وردية صباحية</div>
+          </div>
+        </div>
+        <div class="icon-btn"><svg width="20" height="20"><use href="#i-settings"/></svg></div>
+      </div>
+
+      <div class="search-row pos-search">
+        <div class="search"><svg width="18" height="18"><use href="#i-search"/></svg>ابحث عن منتج أو كود…</div>
+        <div class="scan-btn"><svg width="22" height="22"><use href="#i-barcode"/></svg></div>
+      </div>
+
+      <div class="chips">
+        <div class="chip active">الكل <span class="count">86</span></div>
+        <div class="chip">مشروبات</div>
+        <div class="chip">ألبان</div>
+        <div class="chip">سناكس</div>
+        <div class="chip">منظفات</div>
+      </div>
+
+      <div class="grid-wrap">
+        <div class="pgrid">
+          <div class="pcard in-cart"><span class="qty-badge num">2</span><div class="pthumb" style="background:#FDECEE;color:#C92F3B">بي</div><div class="pname">بيبسي كانز 330 مل</div><div class="pprice"><span class="num">15</span> <small>ج.م</small></div></div>
+          <div class="pcard"><div class="pthumb" style="background:#E3F4F1;color:#217E73">جه</div><div class="pname">لبن جهينة كامل 1 لتر</div><div class="pprice"><span class="num">42</span> <small>ج.م</small></div></div>
+          <div class="pcard in-cart"><span class="qty-badge num">1</span><div class="pthumb" style="background:#FEF3C7;color:#B45309">شي</div><div class="pname">شيبسي عائلي جبنة</div><div class="pprice"><span class="num">20</span> <small>ج.م</small></div></div>
+          <div class="pcard"><div class="pthumb" style="background:#E2E8F0;color:#1E293B">مي</div><div class="pname">مياه نستله 1.5 لتر</div><div class="pprice"><span class="num">10</span> <small>ج.م</small></div></div>
+          <div class="pcard in-cart"><span class="qty-badge num">3</span><div class="pthumb" style="background:#FDECEE;color:#C92F3B">إن</div><div class="pname">إندومي خضار</div><div class="pprice"><span class="num">12</span> <small>ج.م</small></div></div>
+          <div class="pcard"><div class="pthumb" style="background:#E3F4F1;color:#217E73">زب</div><div class="pname">زبادي جهينة سادة</div><div class="pprice"><span class="num">9</span> <small>ج.م</small></div></div>
+          <div class="pcard"><div class="pthumb" style="background:#E2E8F0;color:#1E293B">بر</div><div class="pname">بريل سائل 650 مل</div><div class="pprice"><span class="num">38</span> <small>ج.م</small></div></div>
+          <div class="pcard"><div class="pthumb" style="background:#FEF3C7;color:#B45309">مو</div><div class="pname">مولتو كرواسون</div><div class="pprice"><span class="num">10</span> <small>ج.م</small></div></div>
+          <div class="pcard"><div class="pthumb" style="background:#FDECEE;color:#C92F3B">كو</div><div class="pname">كوكاكولا 1 لتر</div><div class="pprice"><span class="num">25</span> <small>ج.م</small></div></div>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="grabber"></div>
+        <div class="cart-head">
+          <h3>السلة <span>6 قطع</span></h3>
+          <a>مسح الكل</a>
+        </div>
+        <div class="cart-line">
+          <div class="nm">بيبسي كانز 330 مل<small><span class="num">15</span> ج.م × <span class="num">2</span></small></div>
+          <div class="stepper"><b>−</b><span class="num">2</span><b>+</b></div>
+          <div class="lt num">30.00</div>
+        </div>
+        <div class="cart-line">
+          <div class="nm">إندومي خضار<small><span class="num">12</span> ج.م × <span class="num">3</span></small></div>
+          <div class="stepper"><b>−</b><span class="num">3</span><b>+</b></div>
+          <div class="lt num">36.00</div>
+        </div>
+        <div class="cart-line">
+          <div class="nm">شيبسي عائلي جبنة<small><span class="num">20</span> ج.م × <span class="num">1</span></small></div>
+          <div class="stepper"><b>−</b><span class="num">1</span><b>+</b></div>
+          <div class="lt num">20.00</div>
+        </div>
+        <div class="checkout">
+          <div class="lbl"><svg width="20" height="20"><use href="#i-check"/></svg>إتمام البيع</div>
+          <div class="amt"><span class="num">86.00</span> <small>ج.م</small></div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ============ 2. Invoice ============ -->
+  <section class="shot">
+    <div class="shot-label"><b>2</b>الفاتورة</div>
+    <div class="phone"><div class="screen">
+      <div class="island"></div>
+      <div class="statusbar"><span>9:42</span><span class="icons"><svg width="64" height="14"><use href="#i-sb"/></svg></span></div>
+
+      <div class="appbar">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="icon-btn"><svg width="20" height="20"><use href="#i-back"/></svg></div>
+          <div>
+            <h2>تفاصيل الفاتورة</h2>
+            <span class="status-pill"><svg width="12" height="12"><use href="#i-check"/></svg>مدفوعة نقدًا</span>
+          </div>
+        </div>
+        <div class="icon-btn"><svg width="20" height="20"><use href="#i-more"/></svg></div>
+      </div>
+
+      <div class="inv-scroll">
+        <div class="paper">
+          <div class="paper-top"></div>
+          <div class="paper-head">
+            <div class="paper-shop">
+              <div class="shop-logo">أ</div>
+              <div>
+                <h3>بقالة الأمل</h3>
+                <p>12 ش الجمهورية، المنصورة<br><span class="num">0101 234 5678</span></p>
+              </div>
+            </div>
+            <div class="inv-no">
+              <small>رقم الفاتورة</small>
+              <b class="num">#INV-0142</b>
+            </div>
+          </div>
+          <div class="meta">
+            <div>التاريخ<b><span class="num">03/10/2026</span></b></div>
+            <div>الوقت<b><span class="num">09:41</span> ص</b></div>
+            <div>العميل<b>عميل نقدي</b></div>
+            <div>الكاشير<b>محمود</b></div>
+          </div>
+          <table class="items">
+            <thead><tr><th>الصنف</th><th>الكمية</th><th>السعر</th><th>الإجمالي</th></tr></thead>
+            <tbody>
+              <tr><td>بيبسي كانز</td><td class="num">2</td><td class="num">15.00</td><td class="num">30.00</td></tr>
+              <tr><td>إندومي خضار</td><td class="num">3</td><td class="num">12.00</td><td class="num">36.00</td></tr>
+              <tr><td>شيبسي عائلي</td><td class="num">1</td><td class="num">20.00</td><td class="num">20.00</td></tr>
+            </tbody>
+          </table>
+          <div class="totals">
+            <div class="trow"><span>المجموع الفرعي</span><span class="num">86.00</span></div>
+            <div class="trow disc"><span>خصم</span><span class="num">−6.00</span></div>
+            <div class="trow"><span>ضريبة القيمة المضافة (14%)</span><span class="num">11.20</span></div>
+            <div class="grand"><span>الإجمالي المستحق</span><b><span class="num">91.20</span> <small>ج.م</small></b></div>
+            <div class="paid-row"><span>المدفوع: <span class="num">100.00</span></span><span style="color:var(--accent-dark)">الباقي: <span class="num">8.80</span> ج.م</span></div>
+          </div>
+          <div class="paper-foot">
+            <div>شكرًا لتعاملكم معنا 🤝<br>الاستبدال خلال 14 يوم بالفاتورة</div>
+            <div class="qr">
+              <i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i>
+              <i></i><i class="o"></i><i></i><i></i><i class="o"></i><i class="o"></i><i></i>
+              <i></i><i></i><i></i><i class="o"></i><i></i><i></i><i></i>
+              <i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i><i class="o"></i>
+              <i></i><i></i><i></i><i class="o"></i><i></i><i class="o"></i><i></i>
+              <i></i><i class="o"></i><i></i><i></i><i class="o"></i><i></i><i></i>
+              <i></i><i></i><i></i><i class="o"></i><i></i><i></i><i class="o"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inv-actions">
+        <div class="btn btn-wa"><svg width="22" height="22"><use href="#i-wa"/></svg>مشاركة واتساب</div>
+        <div class="btn btn-print"><svg width="20" height="20"><use href="#i-printer"/></svg>طباعة</div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ============ 3. Inventory ============ -->
+  <section class="shot">
+    <div class="shot-label"><b>3</b>المخزون</div>
+    <div class="phone"><div class="screen">
+      <div class="island"></div>
+      <div class="statusbar"><span>9:45</span><span class="icons"><svg width="64" height="14"><use href="#i-sb"/></svg></span></div>
+
+      <div class="appbar">
+        <div>
+          <h2>المخزون</h2>
+          <div class="sub"><span class="num">86</span> منتج · آخر تحديث منذ دقيقتين</div>
+        </div>
+        <div class="icon-btn"><svg width="20" height="20"><use href="#i-filter"/></svg></div>
+      </div>
+
+      <div class="search-row">
+        <div class="search"><svg width="18" height="18"><use href="#i-search"/></svg>ابحث بالاسم أو الباركود…</div>
+        <div class="scan-btn"><svg width="22" height="22"><use href="#i-barcode"/></svg></div>
+      </div>
+
+      <div class="chips">
+        <div class="chip active">الكل <span class="count">86</span></div>
+        <div class="chip"><svg width="13" height="13" style="color:var(--primary)"><use href="#i-warn"/></svg>ناقص <span class="count">5</span></div>
+        <div class="chip">مشروبات</div>
+        <div class="chip">ألبان</div>
+      </div>
+
+      <div class="stats-strip">
+        <div class="mini"><small>قيمة المخزون</small><b class="num">24,380</b></div>
+        <div class="mini alert"><small>قارب على النفاد</small><b class="num">5</b></div>
+        <div class="mini"><small>نفد</small><b class="num">1</b></div>
+      </div>
+
+      <div class="inv-list" style="padding-top:8px">
+        <div class="icard low">
+          <div class="pthumb" style="background:#E3F4F1;color:#217E73">جه</div>
+          <div class="info">
+            <h4>لبن جهينة كامل 1 لتر</h4>
+            <div class="sku num">SKU 6223001 · ألبان</div>
+            <div class="stockbar"><i style="width:12%"></i></div>
+          </div>
+          <div class="side">
+            <div class="price"><span class="num">42</span> <small>ج.م</small></div>
+            <span class="stock-tag stock-low"><svg width="11" height="11"><use href="#i-warn"/></svg>متبقي <span class="num">3</span></span>
+          </div>
+        </div>
+
+        <div class="icard">
+          <div class="pthumb" style="background:#FDECEE;color:#C92F3B">بي</div>
+          <div class="info">
+            <h4>بيبسي كانز 330 مل</h4>
+            <div class="sku num">SKU 6221004 · مشروبات</div>
+            <div class="stockbar"><i style="width:78%"></i></div>
+          </div>
+          <div class="side">
+            <div class="price"><span class="num">15</span> <small>ج.م</small></div>
+            <span class="stock-tag stock-ok"><span class="num">94</span> قطعة</span>
+          </div>
+        </div>
+
+        <div class="icard low">
+          <div class="pthumb" style="background:#FDECEE;color:#C92F3B">إن</div>
+          <div class="info">
+            <h4>إندومي خضار</h4>
+            <div class="sku num">SKU 8994963 · أغذية</div>
+            <div class="stockbar"><i style="width:18%"></i></div>
+          </div>
+          <div class="side">
+            <div class="price"><span class="num">12</span> <small>ج.م</small></div>
+            <span class="stock-tag stock-low"><svg width="11" height="11"><use href="#i-warn"/></svg>متبقي <span class="num">7</span></span>
+          </div>
+        </div>
+
+        <div class="icard out">
+          <div class="pthumb" style="background:#E2E8F0;color:#1E293B">بر</div>
+          <div class="info">
+            <h4>بريل سائل 650 مل</h4>
+            <div class="sku num">SKU 6224410 · منظفات</div>
+            <div class="stockbar"><i style="width:0"></i></div>
+          </div>
+          <div class="side">
+            <div class="price"><span class="num">38</span> <small>ج.م</small></div>
+            <span class="stock-tag stock-out">نفد</span>
+          </div>
+        </div>
+
+        <div class="icard">
+          <div class="pthumb" style="background:#FEF3C7;color:#B45309">شي</div>
+          <div class="info">
+            <h4>شيبسي عائلي جبنة</h4>
+            <div class="sku num">SKU 6223302 · سناكس</div>
+            <div class="stockbar"><i style="width:55%"></i></div>
+          </div>
+          <div class="side">
+            <div class="price"><span class="num">20</span> <small>ج.م</small></div>
+            <span class="stock-tag stock-ok"><span class="num">41</span> قطعة</span>
+          </div>
+        </div>
+
+        <div class="icard">
+          <div class="pthumb" style="background:#E2E8F0;color:#1E293B">مي</div>
+          <div class="info">
+            <h4>مياه نستله 1.5 لتر</h4>
+            <div class="sku num">SKU 6221155 · مشروبات</div>
+            <div class="stockbar"><i style="width:64%"></i></div>
+          </div>
+          <div class="side">
+            <div class="price"><span class="num">10</span> <small>ج.م</small></div>
+            <span class="stock-tag stock-ok"><span class="num">60</span> قطعة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fab"><svg width="20" height="20"><use href="#i-plus"/></svg>منتج جديد</div>
+
+      <nav class="bottom-nav">
+        <div class="nav-item"><div class="ni"><svg width="22" height="22"><use href="#i-pos"/></svg></div>البيع</div>
+        <div class="nav-item"><div class="ni"><svg width="22" height="22"><use href="#i-invoice"/></svg></div>الفواتير</div>
+        <div class="nav-item active"><div class="ni"><svg width="22" height="22"><use href="#i-box"/></svg></div>المخزون</div>
+        <div class="nav-item"><div class="ni"><svg width="22" height="22"><use href="#i-chart"/></svg></div>التقارير</div>
+      </nav>
+    </div></div>
+  </section>
+
+  <!-- ============ 4. Reports ============ -->
+  <section class="shot">
+    <div class="shot-label"><b>4</b>التقارير</div>
+    <div class="phone"><div class="screen">
+      <div class="island"></div>
+      <div class="statusbar"><span>9:48</span><span class="icons"><svg width="64" height="14"><use href="#i-sb"/></svg></span></div>
+
+      <div class="appbar">
+        <div>
+          <h2>التقارير</h2>
+          <div class="sub">السبت، 3 أكتوبر 2026</div>
+        </div>
+        <div class="icon-btn"><svg width="20" height="20"><use href="#i-calendar"/></svg></div>
+      </div>
+
+      <div class="seg"><div class="on">اليوم</div><div>الأسبوع</div><div>الشهر</div></div>
+
+      <div class="rep-scroll">
+        <div class="hero">
+          <small>مبيعات اليوم</small>
+          <div class="big"><span class="num">4,862</span> <small>ج.م</small></div>
+          <div class="row"><span class="delta"><svg width="11" height="11"><use href="#i-up"/></svg><span class="num">+12.4%</span></span>عن السبت الماضي</div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="ki" style="background:var(--primary-soft);color:var(--primary)"><svg width="18" height="18"><use href="#i-receipt"/></svg></div>
+            <div><small>عدد الفواتير</small><b class="num">57</b></div>
+          </div>
+          <div class="kpi">
+            <div class="ki" style="background:var(--accent-soft);color:var(--accent-dark)"><svg width="18" height="18"><use href="#i-wallet"/></svg></div>
+            <div><small>متوسط الفاتورة</small><b><span class="num">85.3</span></b></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><h4>المبيعات — آخر 7 أيام</h4><span>بالجنيه</span></div>
+          <div class="chart" role="img" aria-label="مبيعات آخر 7 أيام: الأحد 3,120، الإثنين 3,840، الثلاثاء 2,960، الأربعاء 4,210، الخميس 5,380، الجمعة 3,450، السبت 4,862">
+            <div class="gridlines"><i></i><i></i><i></i><i></i></div>
+            <div class="bars">
+              <div class="bar-col"><div class="bar" style="height:56px"><span class="tip">الأحد · <span class="num">3,120</span></span></div><div class="day">أحد</div></div>
+              <div class="bar-col"><div class="bar" style="height:69px"><span class="tip">الإثنين · <span class="num">3,840</span></span></div><div class="day">إثنين</div></div>
+              <div class="bar-col"><div class="bar" style="height:53px"><span class="tip">الثلاثاء · <span class="num">2,960</span></span></div><div class="day">ثلاثاء</div></div>
+              <div class="bar-col"><div class="bar" style="height:76px"><span class="tip">الأربعاء · <span class="num">4,210</span></span></div><div class="day">أربعاء</div></div>
+              <div class="bar-col"><div class="bar" style="height:96px"><span class="tip">الخميس · <span class="num">5,380</span></span></div><div class="day">خميس</div></div>
+              <div class="bar-col"><div class="bar" style="height:62px"><span class="tip">الجمعة · <span class="num">3,450</span></span></div><div class="day">جمعة</div></div>
+              <div class="bar-col today"><div class="bar" style="height:87px"><span class="tip" style="opacity:1"><span class="num">4,862</span></span></div><div class="day">اليوم</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><h4>الأكثر مبيعًا اليوم</h4><span>عرض الكل</span></div>
+          <div class="top-item">
+            <div class="rank num">1</div>
+            <div class="ti"><b>بيبسي كانز 330 مل</b><div class="meter"><i style="width:100%"></i></div></div>
+            <div class="tv"><span class="num">720</span> ج.م<small><span class="num">48</span> قطعة</small></div>
+          </div>
+          <div class="top-item">
+            <div class="rank num">2</div>
+            <div class="ti"><b>لبن جهينة 1 لتر</b><div class="meter"><i style="width:82%"></i></div></div>
+            <div class="tv"><span class="num">588</span> ج.م<small><span class="num">14</span> قطعة</small></div>
+          </div>
+          <div class="top-item">
+            <div class="rank num">3</div>
+            <div class="ti"><b>إندومي خضار</b><div class="meter"><i style="width:60%"></i></div></div>
+            <div class="tv"><span class="num">432</span> ج.م<small><span class="num">36</span> قطعة</small></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <div class="nav-item"><div class="ni"><svg width="22" height="22"><use href="#i-pos"/></svg></div>البيع</div>
+        <div class="nav-item"><div class="ni"><svg width="22" height="22"><use href="#i-invoice"/></svg></div>الفواتير</div>
+        <div class="nav-item"><div class="ni"><svg width="22" height="22"><use href="#i-box"/></svg></div>المخزون</div>
+        <div class="nav-item active"><div class="ni"><svg width="22" height="22"><use href="#i-chart"/></svg></div>التقارير</div>
+      </nav>
+    </div></div>
+  </section>
+
+</main>
+
+<p class="footnote">فاتورة · Bold Executive · Cairo 400–900 · شاشات 390×844 · RTL</p>
+
+</body>
+</html>
