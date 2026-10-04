@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codester-inc — تقرير دراسة سوقية</title>
+<style>
+:root {
+  --bg: #0a0e1a; --card: #131829; --accent: #00d9ff; --accent2: #6c5ce7;
+  --text: #e4e6eb; --muted: #8b95a7; --border: #1e2738;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+.hero { background: linear-gradient(135deg, #0a0e1a 0%, #131829 50%, #0a0e1a 100%); border-bottom: 2px solid var(--accent); padding: 40px 20px; text-align: center; }
+.hero h1 { font-size: 1.8em; color: var(--accent); margin-bottom: 8px; }
+.hero p { color: var(--muted); font-size: 0.95em; }
+.hero .badge { display: inline-block; background: var(--accent2); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; margin-top: 10px; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 30px 0 15px; font-size: 1.3em; }
+h3 { color: var(--accent2); margin: 20px 0 10px; font-size: 1.1em; }
+p { margin: 10px 0; }
+ul { margin: 10px 20px; }
+li { margin: 5px 0; }
+blockquote { border-right: 3px solid var(--accent); background: var(--card); padding: 12px 16px; margin: 15px 0; border-radius: 6px; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9em; display: block; overflow-x: auto; }
+th { background: var(--card); color: var(--accent); padding: 10px 12px; text-align: right; border: 1px solid var(--border); white-space: nowrap; }
+td { padding: 10px 12px; border: 1px solid var(--border); vertical-align: top; }
+tr:nth-child(even) td { background: rgba(19,24,41,0.5); }
+strong { color: #fff; }
+a { color: var(--accent); text-decoration: none; }
+hr { border: none; border-top: 1px solid var(--border); margin: 25px 0; }
+code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; color: var(--accent); }
+.footer { text-align: center; color: var(--muted); padding: 20px; font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 30px; }
+@media (max-width: 600px) { .hero h1 { font-size: 1.4em; } table { font-size: 0.8em; } th, td { padding: 6px 8px; } }
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>📊 تقرير دراسة سوقية شاملة</h1>
+  <p>Codester-inc — التطبيقات الأكثر طلباً والمحتكرة وراء Paywall</p>
+  <span class="badge">🔍 Researcher — gemini-3.1-pro-high (agy)</span>
+</div>
+<div class="container">
+<h1 id="codester-inc">📊 تقرير دراسة سوقية شاملة — Codester-inc</h1>
+<h3 id="paywall">التطبيقات الأكثر طلباً في السوق المصري والعربي + التطبيقات المحتكرة وراء Paywall + الفجوات في السوق</h3>
+<p><strong>أُعد بواسطة:</strong> Researcher — Codester-inc<br />
+<strong>التاريخ:</strong> 4 سبتمبر 2026<br />
+<strong>الهدف:</strong> تحديد التطبيقات الأكثر طلباً للفئات المحتاجة، الكشف عن التطبيقات المحتكرة وراء اشتراكات، واقتراح أفضل 3 مشاريع يمكن تنفيذها بـ Flutter كمشروع أول.</p>
+<hr />
+<h2 id="_1">📑 جدول المحتويات</h2>
+<ol>
+<li><a href="#1-نظرة-عامة-على-السوق-المصري-والعربي">نظرة عامة على السوق المصري والعربي</a></li>
+<li><a href="#2-أكثر-التطبيقات-طلباً">أكثر التطبيقات طلباً — أصحاب البيزنسس الصغيرين</a></li>
+<li><a href="#3-التطبيقات-المحتكرة-وراء-paywallsubscription">التطبيقات المحتكرة وراء Paywall/Subscription</a></li>
+<li><a href="#4-الفجوات-في-السوق">الفجوات في السوق — فئات غير مخدومة</a></li>
+<li><a href="#5-الترتيب-النهائي">الترتيب النهائي حسب الطلب + سهولة التنفيذ + تكلفة التشغيل</a></li>
+<li><a href="#6-top-3-تطبيقات-مقترحة">Top 3 تطبيقات مقترحة كمشروع أول لـ Codester-inc</a></li>
+<li><a href="#7-المراجع-والمصادر">المراجع والمصادر</a></li>
+</ol>
+<hr />
+<h2 id="1">1. نظرة عامة على السوق المصري والعربي</h2>
+<h3 id="11">1.1 أرقام أساسية — مصر</h3>
+<table>
+<thead>
+<tr>
+<th>المؤشر</th>
+<th>القيمة</th>
+<th>المصدر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>عدد مستخدمي الإنترنت</td>
+<td>98.2 مليون (82.7% penetration)</td>
+<td>Udjat Agency / DataReportal 2025</td>
+</tr>
+<tr>
+<td>عدد مالكي الهواتف الذكية</td>
+<td>62 مليون</td>
+<td>23HubLab / Mordor Intelligence</td>
+</tr>
+<tr>
+<td>متوسط العمر</td>
+<td>24 سنة</td>
+<td>DataReportal</td>
+</tr>
+<tr>
+<td>حجم سوق التجارة الإلكترونية</td>
+<td>$7.5 مليار (2024)</td>
+<td>23HubLab / Mordor Intelligence</td>
+</tr>
+<tr>
+<td>معدل النمو السنوي للتجارة الإلكترونية</td>
+<td>30-35%</td>
+<td>Mordor Intelligence</td>
+</tr>
+<tr>
+<td>نسبة المعاملات عبر الموبايل</td>
+<td>75% من إجمالي التجارة الإلكترونية</td>
+<td>23HubLab</td>
+</tr>
+<tr>
+<td>التجارة عبر السوشيال ميديا</td>
+<td>40% من إجمالي المبيعات الأونلاين</td>
+<td>23HubLab</td>
+</tr>
+<tr>
+<td>نسبة السكان خارج النظام البنكي</td>
+<td>~30%</td>
+<td>AUC Study / CBE</td>
+</tr>
+<tr>
+<td>التبني الرقمي للمدفوعات</td>
+<td>قفز من 8% إلى 23% خلال سنتين</td>
+<td>23HubLab</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12">1.2 السياق العربي الأوسع (السعودية، الإمارات، باقي المنطقة)</h3>
+<ul>
+<li><strong>السعودية:</strong> سوق تجارة إلكترونية ~$12 مليار، تبني رقمي عالي، نحو 36 مليون مستخدم إنترنت</li>
+<li><strong>الإمارات:</strong> ~$9 مليار، أعلى نسبة إنترنت في المنطقة</li>
+<li><strong>المنطقة العربية إجمالاً:</strong> فجوة شاسعة في الدعم اللغوي العربي للأدوات العالمية، فجوة في الشمول المالي (13% gender gap في الشمول المالي حسب UNESCWA)</li>
+<li><strong>الاتجاه العام:</strong> تطبيقات mobile-first تهيمن، الـ App-first strategy هي الأقوى في مصر</li>
+</ul>
+<h3 id="13">1.3 الملاحظات الجوهرية</h3>
+<blockquote>
+<p>"أكبر المتاجر الأونلاين في مصر هي صفحات Facebook تُدار من المنازل، والمعاملات تنتهي بكاش يُسلَّم لسائق التوصيل." — 23HubLab</p>
+</blockquote>
+<p>هذا يكشف أن <strong>البيزنسس الصغير بدأ قبل ما يقدر يدفع ثمن أدوات إدارة احترافية</strong>. هذه فجوة عميقة.</p>
+<hr />
+<h2 id="2">2. أكثر التطبيقات طلباً — أصحاب البيزنسس الصغيرين</h2>
+<h3 id="21-invoicing-pos">2.1 فئة: إدارة المبيعات والفواتير (Invoicing &amp; POS)</h3>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الوظيفة</strong></td>
+<td>إنشاء فواتير، تتبع المبيعات، إدارة المخزون، تقارير يومية</td>
+</tr>
+<tr>
+<td><strong>التطبيقات الحالية</strong></td>
+<td>Foodics، Odoo، Zoho Books، QuickBooks، Xero، Wave</td>
+</tr>
+<tr>
+<td><strong>التكلفة الحالية</strong></td>
+<td>QuickBooks: $30-200/شهر · Xero: $29-75/شهر · Foodics: اشتراك شهري بأسعار مرتفعة للسوق المصري · Odoo: مجاني (Community) لكن معقد التركيب</td>
+</tr>
+<tr>
+<td><strong>البديل المجاني</strong></td>
+<td>Zoho Books (خطة مجانية محدودة) · Wave (مجاني لكن بدعم إنجليزي فقط)</td>
+</tr>
+<tr>
+<td><strong>حجم الطلب</strong></td>
+<td>🔴 مرتفع جداً — كل بيزنس صغير (حتى كشك أو متجر صغير) محتاج فاتورة وتتبع مبيعات</td>
+</tr>
+<tr>
+<td><strong>لماذا محتكر؟</strong></td>
+<td>الأدوات العالمية باهظة بالدولار؛ الأدوات المحلية (Foodics، Qoyod) موجهة للشركات المتوسطة والكبيرة؛ لا يوجد بديل عربي مجاني بجودة عالية</td>
+</tr>
+<tr>
+<td><strong>الفجوة</strong></td>
+<td>لا يوجد تطبيق عربي مجاني بالكامل لإدارة المبيعات والفواتير مصمم للبيزنس الميكرو (كشك، متجر صغير، صناع يدوي)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22">2.2 فئة: أدوات التصميم للمحتوى التجاري</h3>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الوظيفة</strong></td>
+<td>تصميم صور للمنتجات، بوستات سوشيال ميديا، لوجو بسيط، كتالوج</td>
+</tr>
+<tr>
+<td><strong>التطبيقات الحالية</strong></td>
+<td>Canva Pro، Adobe Express، Desygner</td>
+</tr>
+<tr>
+<td><strong>التكلفة الحالية</strong></td>
+<td>Canva Pro: ~$12.99/شهر (~650 ج.م) — مرتفع جداً لمصر</td>
+</tr>
+<tr>
+<td><strong>البديل المجاني</strong></td>
+<td>Canva Free (محدود جداً — عناصر وعقول كثيرة مدفوعة)</td>
+</tr>
+<tr>
+<td><strong>حجم الطلب</strong></td>
+<td>🔴 مرتفع جداً — كل صاحب بيجنس صغير على فيسبوك/انستجرام محتاج يصمم صور منتجاته</td>
+</tr>
+<tr>
+<td><strong>لماذا محتكر؟</strong></td>
+<td>Canva تسيطر على السوق عالمياً؛ البدائل المجانية محدودة جداً ولا تدعم العربية بشكل كامل</td>
+</tr>
+<tr>
+<td><strong>الفجوة</strong></td>
+<td>لا يوجد أداة تصميم عربية مجانية بقوالب جاهزة للتجارة المصرية/العربية</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-inventory-management">2.3 فئة: إدارة المخزون (Inventory Management)</h3>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الوظيفة</strong></td>
+<td>تتبع الكميات، تنبيهات نفاد المخزون، تقارير الحركة</td>
+</tr>
+<tr>
+<td><strong>التطبيقات الحالية</strong></td>
+<td>Zoho Inventory، inFlow، Sortly، Odoo Inventory</td>
+</tr>
+<tr>
+<td><strong>التكلفة الحالية</strong></td>
+<td>Zoho Inventory: مجاني حتى 50 طلب/شهر ثم $29+/شهر · inFlow: $89/شهر · Sortly: مجاني محدود ثم $39/شهر</td>
+</tr>
+<tr>
+<td><strong>البديل المجاني</strong></td>
+<td>لا يوجد بديل عربي مجاني؛ الناس تستخدم Excel أو دفاتر ورقية</td>
+</tr>
+<tr>
+<td><strong>حجم الطلب</strong></td>
+<td>🟠 مرتفع — كل متجر صغير محتاج يعرف كم باقى من كل منتج</td>
+</tr>
+<tr>
+<td><strong>لماذا محتكر؟</strong></td>
+<td>الأدوات العالمية بالدولار ومحدودة في الخطط المجانية؛ لا دعم عربي</td>
+</tr>
+<tr>
+<td><strong>الفجوة</strong></td>
+<td>لا يوجد تطبيق عربي مجاني لإدارة المخزون مع扫码 منتجات (barcode) ومزامنة offline-first</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24">2.4 فئة: إدارة المهام والملاحظات للعمل والدراسة</h3>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الوظيفة</strong></td>
+<td>تنظيم المهام، ملاحظات، تخطيط مشاريع صغيرة</td>
+</tr>
+<tr>
+<td><strong>التطبيقات الحالية</strong></td>
+<td>Notion، Todoist، Trello، Evernote، Asana</td>
+</tr>
+<tr>
+<td><strong>التكلفة الحالية</strong></td>
+<td>Notion: مجاني محدود + $10/شهر لل Plus · Todoist: مجاني محدود + $5/شهر Pro · Trello: مجاني محدود + $5-12.50/شهر</td>
+</tr>
+<tr>
+<td><strong>البديل المجاني</strong></td>
+<td>الخطط المجانية موجودة لكن محدودة (عدد محدود من المشاريع، ملفات محدودة)</td>
+</tr>
+<tr>
+<td><strong>حجم الطلب</strong></td>
+<td>🟠 مرتفع — طلاب، صناع محتوى، أصحاب مشاريع ناشئة</td>
+</tr>
+<tr>
+<td><strong>لماذا محتكر؟</strong></td>
+<td>كل تطبيق يحد من الميزات المجانية لدفع المستخدم للاشتراك</td>
+</tr>
+<tr>
+<td><strong>الفجوة</strong></td>
+<td>لا يوجد تطبيق عربي شامل للمهام والملاحظات بدعم RTL كامل وقوالب عربية</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25">2.5 فئة: حلول الدفع والتحصين المالي للبيزنس الصغير</h3>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الوظيفة</strong></td>
+<td>إنشاء روابط دفع، تتبع التحصيل، تقارير مالية بسيطة</td>
+</tr>
+<tr>
+<td><strong>التطبيقات الحالية</strong></td>
+<td>Paymob، Fawry، Stripe، PayPal</td>
+</tr>
+<tr>
+<td><strong>التكلفة الحالية</strong></td>
+<td>Paymob: عمولة على المعاملة لكن مجاني للربط · Stripe: 2.9% + $0.30/معاملة · PayPal: رسوم مرتفعة</td>
+</tr>
+<tr>
+<td><strong>البديل المجاني</strong></td>
+<td>Paymob يوفر أدوات مجانية (Tap on Phone، روابط دفع) لكنه محدود للمسجلين رسمياً</td>
+</tr>
+<tr>
+<td><strong>حجم الطلب</strong></td>
+<td>🔴 مرتفع جداً — 30% من المصريين خارج النظام البنكي</td>
+</tr>
+<tr>
+<td><strong>لماذا محتكر؟</strong></td>
+<td>يحتاج ترخيص وتكاملات بنكية معقدة</td>
+</tr>
+<tr>
+<td><strong>الفجوة</strong></td>
+<td>لا يوجد أداة بسيطة للبيزنس غير الرسمي (الغير مسجل) لتتبع الديون والتحصيل</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-paywallsubscription">3. التطبيقات المحتكرة وراء Paywall/Subscription</h2>
+<blockquote>
+<p><strong>المنطق:</strong> نطبّق التطبيقات اللي الناس محتاجاها فعلاً لكن مضطرة تدفع اشتراك شهري/سنوي — ونعملها مجاناً للفئات المحتاجة.</p>
+</blockquote>
+<h3 id="31">3.1 جدول التطبيقات المحتكرة</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>التطبيق/الفئة</th>
+<th>الوظيفة</th>
+<th>التكلفة الشهرية</th>
+<th>البديل المجاني الحالي</th>
+<th>جودة البديل</th>
+<th>لماذا محتكر</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Canva Pro</strong></td>
+<td>تصميم جرافيك للمحتوى التجاري</td>
+<td>$12.99 (~650 ج.م)</td>
+<td>Canva Free (محدود)</td>
+<td>ضعيف — عناصر وقالب محدود</td>
+<td>قاعدة مستخدمين ضخمة + عناصر حصرية</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>QuickBooks Online</strong></td>
+<td>محاسبة وإدارة مالية للبيزنس</td>
+<td>$30-200 (~1500-10000 ج.م)</td>
+<td>Wave (إنجليزي فقط)</td>
+<td>ضعيف — لا دعم عربي</td>
+<td>ترخيص + تعقيد + تكاملات</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Xero</strong></td>
+<td>محاسبة سحابية</td>
+<td>$29-75 (~1450-3750 ج.م)</td>
+<td>Zoho Books Free (محدود)</td>
+<td>متوسط — محدود بالكمية</td>
+<td>نفس ما سبق</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Notion Plus</strong></td>
+<td>إدارة معرفة ومهام</td>
+<td>$10/شهر (~500 ج.م)</td>
+<td>Notion Free (محدود المشاريع)</td>
+<td>متوسط</td>
+<td>ميزات التعاون والـ AI مدفوعة</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Todoist Pro</strong></td>
+<td>إدارة مهام</td>
+<td>$5/شهر (~250 ج.م)</td>
+<td>Todoist Free (5 مشاريع)</td>
+<td>ضعيف للبيزنس</td>
+<td>ميزات التذكيرات المتقدمة مدفوعة</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Trello Premium</strong></td>
+<td>إدارة مشاريع Kanban</td>
+<td>$5-12.50/شهر</td>
+<td>Trello Free (10 لوحات)</td>
+<td>متوسط</td>
+<td>أتمتة وملفات كبيرة مدفوعة</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Flo Health Premium</strong></td>
+<td>تتبع الدورة والحمل</td>
+<td>$8-10/شهر (~400-500 ج.م)</td>
+<td>تطبيقات مجانية لكن تبيع البيانات</td>
+<td>ضعيف من ناحية الخصوصية</td>
+<td>محتوى طبي حصري + ميزات AI</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Shopify</strong></td>
+<td>متجر إلكتروني</td>
+<td>$29-299/شهر</td>
+<td>WooCommerce (مجاني لكن معقد)</td>
+<td>متوسط — يحتاج استضافة</td>
+<td>منصة متكاملة + شبكة باعة</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Adobe Express Premium</strong></td>
+<td>تصميم سريع</td>
+<td>$9.99/شهر</td>
+<td>Adobe Express Free (محدود)</td>
+<td>ضعيف</td>
+<td>عناصر Adobe حصرية</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Headspace/Calm</strong></td>
+<td>الصحة النفسية والتأمل</td>
+<td>$12.99/شهر</td>
+<td>تطبيقات مجانية محدودة</td>
+<td>ضعيف — محتوى عربي شبه معدوم</td>
+<td>محتوى حصري + إنتاج احترافي</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32">3.2 تحليل الاحتكار</h3>
+<p><strong>نمط واضح:</strong> التطبيقات العالمية تعتمد على نموذج <strong>freemium</strong> — خطة مجانية ضعيفة + خطة مدفوعة بالدولار. في السوق المصري:
+- متوسط دخل الفرد ≈ 5000-12000 ج.م/شهر
+- اشتراك Canva Pro ≈ 650 ج.م = 5-13% من دخل الفرد
+- اشتراك QuickBooks أساسي ≈ 1500 ج.م = 12-30% من دخل الفرد
+- <strong>النتيجة:</strong> الفئات المحتاجة تُحرم من أدوات أساسية لإدارة بيزنسها أو صحتها</p>
+<hr />
+<h2 id="4">4. الفجوات في السوق — فئات غير مخدومة</h2>
+<h3 id="41">4.1 فئات المستخدمين غير المخدومة</h3>
+<table>
+<thead>
+<tr>
+<th>الفئة</th>
+<th>الحجم التقريري</th>
+<th>الاحتياج غير المُلبى</th>
+<th>الأدوات المتاحة حالياً</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>أصحاب المشاريع الميكرو (كشك، متجر صغير، صناع يدوي)</strong></td>
+<td>مليون+ في مصر</td>
+<td>فاتورة + مخزون + تقارير بسيطة بالعربي ومجاناً</td>
+<td>لا يوجد — الناس تستخدم الدفاتر الورقية</td>
+</tr>
+<tr>
+<td><strong>المرضى الفقراء</strong></td>
+<td>~30% من السكان خارج النظام الصحي الرسمي</td>
+<td>معلومات طبية، تذكير أدوية، حجز مواعيد، استشارات بسيطة</td>
+<td>تطبيقات طبية لكنها إما بالإنجليزية أو مدفوعة</td>
+</tr>
+<tr>
+<td><strong>طلاب الجامعات (ميزانية صفر)</strong></td>
+<td>3+ مليون طالب</td>
+<td>أدوات دراسة، تنظيم، ملاحظات، قوالب مشاريع</td>
+<td>تطبيقات أجنبية بالإنجليزية ومحدودة في النسخة المجانية</td>
+</tr>
+<tr>
+<td><strong>صاحبات البيزنس المنزلي (نساء)</strong></td>
+<td>ملايين في مصر والعالم العربي</td>
+<td>تتبع الطلبات، حساب الأرباح، تصميم صور منتجات، إدارة عملاء عبر واتساب</td>
+<td>لا يوجد أداة متكاملة بالعربي</td>
+</tr>
+<tr>
+<td><strong>الفنانون والمبدعون (ميزانية محدودة)</strong></td>
+<td>متنامي</td>
+<td>تصميم محتوى، تنظيم مشاريع إبداعية، عرض أعمال</td>
+<td>Canva Pro باهظ، Behance معقد</td>
+</tr>
+<tr>
+<td><strong>مزارعون صغار</strong></td>
+<td>ملايين في الصعيد والدلتا</td>
+<td>تتبع المحصول، الأسعار، مواسم الزراعة، تذكيرات</td>
+<td>لا يوجد تطبيق عربي</td>
+</tr>
+<tr>
+<td><strong>أصحاب المشاريع الناشئة بـ Zero Budget</strong></td>
+<td>متنامي بشدة</td>
+<td>أدوات إدارة مشاريع، مهام، ملاحظات، تعاون — كلها مجانية</td>
+<td>كل أدوات الإدارة تفرض حدود ثم تطلب اشتراك</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42">4.2 الفجوات التقنية</h3>
+<table>
+<thead>
+<tr>
+<th>الفجوة</th>
+<th>التأثير</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>غياب دعم RTL (من اليمين لليسار)</strong> في معظم الأدوات العالمية</td>
+<td>يحرم المستخدم العربي من تجربة طبيعية</td>
+</tr>
+<tr>
+<td><strong>لا دعم عربي للإدخال الصوتي</strong> في أدوات الإنتاجية</td>
+<td>يقلل الإنتاجية لمن لا يكتب بسرعة</td>
+</tr>
+<tr>
+<td><strong>عدم دعم العمل Offline</strong> في الأدوات السحابية</td>
+<td>مشكلة في المناطق ذات الإنترنت المتقطع</td>
+</tr>
+<tr>
+<td><strong>لا تكامل مع واتساب</strong> كقناة أساسية للبيزنس في مصر</td>
+<td>واتساب هو القناة #1 للتجارة في مصر</td>
+</tr>
+<tr>
+<td><strong>لا دعم للدفع عند الاستلام (COD)</strong> في أدوات الفواتير</td>
+<td>62% من المصريين لا يثقون في الدفع الأونلاين</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. الترتيب النهائي</h2>
+<blockquote>
+<p><strong>معايير الترتيب:</strong>
+1. <strong>الطلب</strong> (حجم السوق المستهدف + الإلحاح)
+2. <strong>سهولة التنفيذ بـ Flutter</strong> (توفر الحزم، تعقيد الـ UI/UX)
+3. <strong>تكلفة التشغيل</strong> (خوادم، APIs، صيانة)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>الترتيب</th>
+<th>التطبيق/الفئة</th>
+<th>الطلب</th>
+<th>سهولة Flutter</th>
+<th>تكلفة التشغيل</th>
+<th>النتيجة الإجمالية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥇 1</td>
+<td><strong>فاتورة — تطبيق فواتير ومبيعات ومخزون للبيزنس الميكرو</strong></td>
+<td>🔴🔴🔴</td>
+<td>🟢🟢🟢</td>
+<td>🟢🟢 (Offline-first, Firebase)</td>
+<td><strong>9/9</strong></td>
+</tr>
+<tr>
+<td>🥈 2</td>
+<td><strong>تطبيق صحة المرأة العربية (Period Tracker + تذكير أدوية)</strong></td>
+<td>🔴🔴🔴</td>
+<td>🟢🟢🟢</td>
+<td>🟢🟢🟢 (Local-first)</td>
+<td><strong>9/9</strong></td>
+</tr>
+<tr>
+<td>🥉 3</td>
+<td><strong>تطبيق إدارة مهام وملاحظات عربي (Todoist/Notion بديل)</strong></td>
+<td>🟠🟠🟠</td>
+<td>🟢🟢🟢</td>
+<td>🟢🟢🟢 (Local + sync)</td>
+<td><strong>8/9</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>أداة تصميم سريع بالعربي (Canva بديل — مصغر)</strong></td>
+<td>🔴🔴</td>
+<td>🟠🟠 (معقد)</td>
+<td>🟠 (خوادم صور)</td>
+<td><strong>6/9</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>تطبيق حجز مواعيد طبية للمرضى الفقراء</strong></td>
+<td>🔴🔴</td>
+<td>🟢🟢</td>
+<td>🟠 (تكامل عيادات)</td>
+<td><strong>6/9</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>تطبيق إدارة مشاريع ناشئة (Trello بديل)</strong></td>
+<td>🟠🟠</td>
+<td>🟢🟢</td>
+<td>🟢 (Local-first)</td>
+<td><strong>6/9</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>تطبيق تتبع الديون والتحصيل للبيزنس غير الرسمي</strong></td>
+<td>🔴🔴</td>
+<td>🟢🟢</td>
+<td>🟢🟢 (Local)</td>
+<td><strong>6/9</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>تطبيق تعاون واتساب للبيزنس المنزلي</strong></td>
+<td>🔴🔴</td>
+<td>🟠 (تكامل WA API)</td>
+<td>🟠 (API costs)</td>
+<td><strong>5/9</strong></td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>تطبيق مزرعة صغيرة للمزارعين</strong></td>
+<td>🟠</td>
+<td>🟢</td>
+<td>🟢</td>
+<td><strong>4/9</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>تطبيق صحة نفسية بالعربي</strong></td>
+<td>🟠</td>
+<td>🟢</td>
+<td>🟠 (محتوى)</td>
+<td><strong>4/9</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-top-3-codester-inc">6. Top 3 تطبيقات مقترحة كمشروع أول لـ Codester-inc</h2>
+<h3 id="1-fatoora">🥇 المشروع 1: فاتورة (Fatoora) — تطبيق فواتير ومبيعات ومخزون مجاني للبيزنس الميكرو</h3>
+<p><strong>الفئة المستهدفة:</strong> أصحاب المتاجر الصغيرة، الكشكات، صناع اليد، البيزنس المنزلي، أي بيزنس بميزانية صفر</p>
+<p><strong>الوظائف الأساسية:</strong>
+- ✅ إنشاء فواتير (PDF + صورة قابلة للمشاركة عبر واتساب)
+- ✅ تتبع المبيعات اليومية/الشهرية
+- ✅ إدارة مخزون بسيطة مع تنبيهات نفاد
+- ✅ دعم الدفع عند الاستلام (COD)
+- ✅ دعم Barcode scanner (موبايل فقط)
+- ✅ تقارير مبسطة (أفضل منتج، يوم الذروة، إجمالي المبيعات)
+- ✅ Offline-first — يعمل بدون إنترنت
+- ✅ دعم كامل للعربية RTL
+- ✅ مزامنة اختيارية عبر Firebase (مجاني)</p>
+<p><strong>البديل المدفوع الذي نستبدله:</strong> QuickBooks ($30+/شهر) · Xero ($29+/شهر) · Foodics (اشتراك شهري) · Odoo (معقد)</p>
+<p><strong>لماذا هذا المشروع أولاً؟</strong>
+1. <strong>الطلب الأعلى:</strong> كل بيزنس صغير محتاج فاتورة — السوق المستهدف 5+ مليون بيزنس ميكرو في مصر وحدها
+2. <strong>أسهل في Flutter:</strong> كل الحزم متوفرة (PDF generation، barcode_scan، SQLite/Hive offline، Firebase sync)
+3. <strong>أقل تكلفة تشغيل:</strong> Offline-first = لا خوادم مكلفة؛ Firebase tier المجاني يكفي للمزامنة
+4. <strong>أثر اجتماعي مباشر:</strong> يساعد أصحاب البيزنس على التطور من الدفتر الورقي للرقمي مجاناً
+5. <strong>قابل للتوسع:</strong> نفس التطبيق ينتشر في السعودية، الإمارات، الأردن، المغرب — كلها محتاجة أداة عربية</p>
+<p><strong>التقنيات المقترحة:</strong></p>
+<pre><code>Frontend: Flutter (Android + iOS)
+State: Riverpod / Bloc
+Database: Hive/Isar (offline) + Firebase (sync)
+PDF: pdf package + share_plus
+Barcode: mobile_scanner
+Payments: Paymob integration (optional)
+</code></pre>
+<p><strong>الميزانية التقديرية للإطلاق:</strong> ≈ $0 (مجاني بالكامل Open Source + Firebase free tier)</p>
+<p><strong>الجدول الزمني المقترح:</strong> 6-8 أسابيع (MVP)</p>
+<hr />
+<h3 id="2-siha">🥈 المشروع 2: صِحة (Siha) — تطبيق صحة المرأة العربية</h3>
+<p><strong>الفئة المستهدفة:</strong> النساء في مصر والعالم العربي، خصوصاً الفقيرات واللواتي لا يستطعن دفع اشتراكات Flo/Clue Premium</p>
+<p><strong>الوظائف الأساسية:</strong>
+- ✅ تتبع الدورة الشهرية (Period Tracker) — privacy-first، بيانات محلية فقط
+- ✅ تذكير أدوية (Pill reminder)
+- ✅ متابعة الحمل (Pregnancy tracker — أسابيع، تذكيرات)
+- ✅ محتوى تثقيفي صحي بالعربية (مقالات قصيرة موثوقة)
+- ✅ دعم كامل للعربية RTL
+- ✅ Offline-first — كل البيانات على الجهاز
+- ✅ خصوصية تامة — لا بيع بيانات (مثل Euki لكن بالعربي)</p>
+<p><strong>البديل المدفوع الذي نستبدله:</strong> Flo Premium ($8-10/شهر) · Clue Plus · Ovia Premium</p>
+<p><strong>لماذا هذا المشروع؟</strong>
+1. <strong>طلب مرتفع ومُهمل:</strong> Flo لديه 100M+ مستخدم عالمي — لكن النسخة العربية ضعيفة والاشتراك باهظ
+2. <strong>سهل في Flutter:</strong> UI بسيط، calculations محلية، لا خوادم مطلوبة
+3. <strong>تكلفة تشغيل شبه صفر:</strong> Local-first = لا خوادم؛ المحتوى التثقيفي static
+4. <strong>أثر اجتماعي عميق:</strong> النساء الفقيرات محرومات من أدوات صحية أساسية
+5. ** Daleela app موجود لكن مدفوع** — نحن نقدم البديل المجاني بالكامل</p>
+<p><strong>التقنيات المقترحة:</strong></p>
+<pre><code>Frontend: Flutter (Android + iOS)
+State: Riverpod
+Database: Hive (local only — privacy)
+Content: bundled JSON assets (مقالات)
+Notifications: flutter_local_notifications
+Privacy: No analytics, no tracking, no network
+</code></pre>
+<p><strong>الميزانية التقديرية للإطلاق:</strong> ≈ $0 (Open Source، لا خوادم)</p>
+<p><strong>الجدول الزمني المقترح:</strong> 4-6 أسابيع (MVP)</p>
+<hr />
+<h3 id="3-maham">🥉 المشروع 3: مهام (Maham) — تطبيق إدارة مهام وملاحظات عربي</h3>
+<p><strong>الفئة المستهدفة:</strong> طلاب، أصحاب مشاريع ناشئة بـ Zero Budget، صناع محتوى، أي شخص يحتاج تنظيم عمله بالعربي</p>
+<p><strong>الوظائف الأساسية:</strong>
+- ✅ إدارة مهام (To-do) مع تصنيفات وأولويات
+- ✅ ملاحظات (Notes) مع دعم Markdown
+- ✅ Kanban Board بسيط (مثل Trello)
+- ✅ تقويم وتذكيرات
+- ✅ قوالب جاهزة (قالب مشروع، قالب دراسة، قالب محتوى)
+- ✅ دعم كامل للعربية RTL
+- ✅ Offline-first + مزامنة اختيارية
+- ✅ بدون حدود على عدد المشاريع/اللوحات (عكس Todoist/Trello)</p>
+<p><strong>البديل المدفوع الذي نستبدله:</strong> Notion Plus ($10/شهر) · Todoist Pro ($5/شهر) · Trello Premium ($5-12.50/شهر)</p>
+<p><strong>لماذا هذا المشروع؟</strong>
+1. <strong>الطلب متوسط-مرتفع:</strong> الطلاب والشباب يمثلون شريحة ضخمة في مصر (3+ مليون طالب جامعي)
+2. <strong>سهل في Flutter:</strong> UI معروف، حزم متوفرة
+3. <strong>تكلفة تشغيل منخفضة:</strong> Local-first مع sync اختياري
+4. <strong>ميزة تنافسية واضحة:</strong> "كل الميزات مجاناً بالعربي" — لا أحد يقدم هذا
+5. <strong>قابل للتوسع:</strong> يخدم الطلاب → أصحاب المشاريع → الفِرق الصغيرة</p>
+<p><strong>التقنيات المقترحة:</strong></p>
+<pre><code>Frontend: Flutter (Android + iOS)
+State: Riverpod / Bloc
+Database: Isar/Hive (offline) + Firebase/Supabase (sync)
+Markdown: flutter_markdown
+Calendar: table_calendar
+Notifications: flutter_local_notifications
+</code></pre>
+<p><strong>الميزانية التقديرية للإطلاق:</strong> ≈ $0 (Firebase free tier / Supabase free tier)</p>
+<p><strong>الجدول الزمني المقترح:</strong> 5-7 أسابيع (MVP)</p>
+<hr />
+<h2 id="7">7. المراجع والمصادر</h2>
+<h3 id="_2">مصادر السوق المصري</h3>
+<ol>
+<li><strong>23HubLab</strong> — "E-commerce Growth in Egypt: Opportunities &amp; Gaps" — 23hublab.com</li>
+<li><strong>Mordor Intelligence</strong> — "Egypt E-commerce Market Size, Share &amp; Statistics - 2031" — mordorintelligence.com</li>
+<li><strong>DataReportal</strong> — "Digital 2025: Egypt" — datareportal.com</li>
+<li><strong>Code95</strong> — "Top 10 Most Popular Apps in Egypt" — code95.com</li>
+<li><strong>SimilarWeb</strong> — Top Apps Ranking Egypt — similarweb.com</li>
+<li><strong>42matters</strong> — Most Popular Mobile Apps: Egypt — 42matters.com</li>
+<li><strong>OECD</strong> — "SME and Entrepreneurship Policy in Egypt: Fintech for SME" — oecd.org (2025)</li>
+<li><strong>Central Bank of Egypt (CBE)</strong> — Financial Inclusion Strategy 2022-2025 — cbe.org.eg</li>
+<li><strong>AUC Thesis</strong> — "Digital Payment Adoption and Firm Performance in Egypt" (2026)</li>
+<li><strong>Udjat Agency</strong> — "Online Business Ideas Egypt" — udjatagency.com (2026)</li>
+</ol>
+<h3 id="_3">مصادر التطبيقات والأسعار</h3>
+<ol>
+<li><strong>Canva Pricing</strong> — canva.com/en_gb/pricing</li>
+<li><strong>Xero Pricing Plans</strong> — xero.com/pricing-plans</li>
+<li><strong>Zoho Books Free</strong> — zoho.com/books/free-accounting-software</li>
+<li><strong>QuickBooks vs Zoho Comparison</strong> — quickbooks.intuit.com/compare/quickbooks-vs-zoho</li>
+<li><strong>Zapier</strong> — "The 6 best free invoicing software in 2026" — zapier.com</li>
+<li><strong>Technology Advice</strong> — "Best Free POS Systems for 2026" — technologyadvice.com</li>
+<li><strong>US Chamber</strong> — "10 Free Accounting Tools for Your Small Business" — uschamber.com</li>
+<li><strong>RevenueCat</strong> — "State of Subscription Apps 2026: Productivity" — revenuecat.com</li>
+</ol>
+<h3 id="_4">مصادر الصحة والفجوات</h3>
+<ol>
+<li><strong>Euki App</strong> — "The period tracker that doesn't track you" — eukiapp.org</li>
+<li><strong>BBC Future</strong> — "How period trackers share your private details" — bbc.com (2026)</li>
+<li><strong>PMC/NIH</strong> — "Digital health determinants &amp; divide in the Arab world" (2025)</li>
+<li><strong>PMC/NIH</strong> — "Assessing the impact of digital health literacy" (2025)</li>
+<li><strong>UNESCWA</strong> — "Financial Inclusion in the Arab Region" (2025)</li>
+<li><strong>Daleela/Motherbeing</strong> — AI-powered women's health app for Arab women — linkedin.com/company/daleela</li>
+</ol>
+<h3 id="_5">مصادر تقنية</h3>
+<ol>
+<li><strong>GitHub</strong> — Flutter POS open source examples — github.com/topics/pos-system</li>
+<li><strong>Foodics</strong> — "The Role of the Cashier System in Developing Egyptian Restaurants" — foodics.com</li>
+<li><strong>StartupBlink</strong> — Top Startups in Egypt — startupblink.com</li>
+<li><strong>F6S</strong> — Egypt Startups — f6s.com</li>
+<li><strong>Tech In Africa</strong> — "Top 5 Startups to Watch in Egypt in 2025" — techinafrica.com</li>
+<li><strong>GoDaddy</strong> — "30+ online business ideas that actually work in the Middle East" — godaddy.com</li>
+</ol>
+<hr />
+<h2 id="_6">الخلاصة التنفيذية</h2>
+<blockquote>
+<p><strong>السوق المصري والعربي يعج بالفجوات</strong> التي خلقتها التطبيقات العالمية باسعارها بالدولار وضعف دعمها للعربية. أصحاب البيزنس الميكرو، النساء، الطلاب، والفئات المحتاجة يحتاجون أدوات رقمية أساسية — فواتير، تتبع صحة، تنظيم مهام — لكنهم لا يستطيعون دفع $5-30/شهر.</p>
+<p><strong>Codester-inc يمكنها البدء بثلاثة مشاريع بـ Flutter بتكلفة تشغيل شبه صفر:</strong>
+1. <strong>فاتورة</strong> — الأعلى طلباً، الأسهل تنفيذاً، الأعظم أثراً اقتصادياً
+2. <strong>صِحة</strong> — أعظم أثراً اجتماعياً، الأبسط تقنياً (local-first)
+3. <strong>مهام</strong> — الأوسع شريحة، الأقوى كـ brand builder للمشروع</p>
+<p><strong>المبدأ:</strong> مجاني بالكامل، عربي بالكامل، offline-first، خصوصية أولاً، بدون إعلانات.</p>
+</blockquote>
+<hr />
+<p><em>هذا التقرير جاهز للعرض على الـ Owner.</em></p>
+</div>
+<div class="footer">Codester-inc © 2026 — مجاني للفئات المحتاجة 🦾</div>
+</body>
+</html>

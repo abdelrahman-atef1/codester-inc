@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "98998118748",
+    "project_id": "codester-inc",
+    "storage_bucket": "codester-inc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98998118748:android:4cfd46d43e2c80051e7999",
+        "android_client_info": {
+          "package_name": "com.codesterinc.fatura"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6I2Z15VQ-QP4pNa0d8Xms2S8ZfsfjxT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

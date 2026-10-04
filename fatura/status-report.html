@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codester-inc — تقرير مشروع فاتورة</title>
+<style>
+:root {
+  --bg: #0a0e1a; --card: #131829; --accent: #00d9ff; --accent2: #6c5ce7;
+  --text: #e4e6eb; --muted: #8b95a7; --border: #1e2738;
+  --green: #00e676; --red: #ff5252; --orange: #ffab40;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+.hero { background: linear-gradient(135deg, #0a0e1a 0%, #131829 50%, #0a0e1a 100%); border-bottom: 2px solid var(--accent); padding: 40px 20px; text-align: center; }
+.hero h1 { font-size: 1.8em; color: var(--accent); margin-bottom: 8px; }
+.hero p { color: var(--muted); font-size: 0.95em; }
+.hero .badge { display: inline-block; background: var(--accent2); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; margin-top: 10px; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 30px 0 15px; font-size: 1.3em; }
+h3 { color: var(--accent2); margin: 20px 0 10px; font-size: 1.1em; }
+p { margin: 10px 0; }
+ul { margin: 10px 20px; }
+li { margin: 5px 0; }
+blockquote { border-right: 3px solid var(--accent); background: var(--card); padding: 12px 16px; margin: 15px 0; border-radius: 6px; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.9em; display: block; overflow-x: auto; }
+th { background: var(--card); color: var(--accent); padding: 10px 12px; text-align: right; border: 1px solid var(--border); white-space: nowrap; }
+td { padding: 10px 12px; border: 1px solid var(--border); vertical-align: top; }
+tr:nth-child(even) td { background: rgba(19,24,41,0.5); }
+strong { color: #fff; }
+a { color: var(--accent); text-decoration: none; }
+hr { border: none; border-top: 1px solid var(--border); margin: 25px 0; }
+code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; color: var(--accent); }
+.footer { text-align: center; color: var(--muted); padding: 20px; font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 30px; }
+.status-go { color: var(--green); font-weight: bold; }
+.status-pending { color: var(--orange); }
+@media (max-width: 600px) { .hero h1 { font-size: 1.4em; } table { font-size: 0.8em; } th, td { padding: 6px 8px; } }
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>📊 تقرير شامل — مشروع فاتورة</h1>
+  <p>Codester-inc — حالة المشروع حتى 4 سبتمبر 2026</p>
+  <span class="badge">📌 المدير العام — glm-5.2 (ollama-cloud)</span>
+</div>
+<div class="container">
+<h1 id="fatura">📊 تقرير شامل — مشروع فاتورة (Fatura)</h1>
+<h2 id="codester-inc-4-2026">Codester-inc — حالة المشروع حتى 4 سبتمبر 2026</h2>
+<p><strong>أُعد بواسطة:</strong> المدير العام — glm-5.2 (ollama-cloud)
+<strong>التاريخ:</strong> 4 سبتمبر 2026</p>
+<hr />
+<h2 id="1">1. ملخص المشروع</h2>
+<p><strong>الاسم:</strong> فاتورة (Fatura)
+<strong>النوع:</strong> تطبيق POS + فواتير + مخزون للبيزنس الميكرو
+<strong>المستهدف:</strong> الكشك، المتجر الصغير، صناع يدوي في مصر والعالم العربي
+<strong>التكلفة:</strong> $25 one-time (Google Play) + $0/شهر تشغيلي
+<strong>القرار:</strong> ✅ GO (Business Analyst)</p>
+<hr />
+<h2 id="2">2. مراحل العمل المنجزة</h2>
+<h3 id="1-researcher-gemini-31-pro-high">✅ المرحلة 1: دراسة سوقية (Researcher — gemini-3.1-pro-high)</h3>
+<ul>
+<li>98 مليون مستخدم إنترنت في مصر</li>
+<li>62 مليون هاتف ذكي</li>
+<li>40% من المبيعات الأونلاين عبر سوشيال ميديا</li>
+<li>لا يوجد بديل عربي مجاني للبيزنس الميكرو</li>
+<li>المنافسين: QuickBooks ($30-200/شهر)، Foodics، Daftra</li>
+<li>التقرير الكامل: <code>projects/codester-inc/market-research.md</code></li>
+</ul>
+<h3 id="2-user-stories-product-manager-claude-sonnet-4-6">✅ المرحلة 2: User Stories (Product Manager — claude-sonnet-4-6)</h3>
+<p><strong>22 user story في 8 فئات:</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>الفئة</th>
+<th>User Stories</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Onboarding</td>
+<td>US-001, US-002</td>
+<td>Must, Must</td>
+</tr>
+<tr>
+<td>2</td>
+<td>الفواتير</td>
+<td>US-003, US-004, US-005</td>
+<td>Must, Should, Should</td>
+</tr>
+<tr>
+<td>3</td>
+<td>المبيعات (POS)</td>
+<td>US-006, US-007</td>
+<td>Must, Must</td>
+</tr>
+<tr>
+<td>4</td>
+<td>المخزون</td>
+<td>US-008, US-009, US-010</td>
+<td>Must, Should, Must</td>
+</tr>
+<tr>
+<td>5</td>
+<td>التقارير</td>
+<td>US-011, US-012</td>
+<td>Must, Should</td>
+</tr>
+<tr>
+<td>6</td>
+<td>الإعدادات</td>
+<td>US-013, US-014</td>
+<td>Must, Must</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Offline-First</td>
+<td>US-015, US-016</td>
+<td>Must, Should</td>
+</tr>
+<tr>
+<td>8</td>
+<td>الصلاحيات</td>
+<td>US-017, US-018, US-019, US-020, US-021, US-022</td>
+<td>Must×5, Should</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MVP Scope:</strong> 14 story (Must فقط)
+<strong>الملف:</strong> <code>projects/codester-inc/fatura/user-stories.md</code></p>
+<h3 id="3-system-design-chief-architect-claude-opus-4-6-thinking">✅ المرحلة 3: System Design (Chief Architect — claude-opus-4-6-thinking)</h3>
+<p><strong>Stack التقني:</strong>
+| Component | Technology |
+|-----------|-----------|
+| Framework | Flutter |
+| Language | Dart |
+| Database | Drift (SQLite-based) |
+| State Management | Riverpod 2.x |
+| Architecture | Clean Architecture + MVVM |
+| Routing | GoRouter |</p>
+<p><strong>Packages (كلها مجانية):</strong>
+| Package | الوظيفة |
+|---------|---------|
+| mobile_scanner | barcode scanning |
+| flutter_receipt_printer | طباعة حرارية Bluetooth |
+| pdf + printing | PDF generation |
+| share_plus | مشاركة واتساب/SMS |
+| fl_chart | رسوم بيانية |
+| googleapis | Google Drive backup |</p>
+<p><strong>Database Schema:</strong> 7 tables
+- stores (بيانات المتجر)
+- users (الموظفين + الصلاحيات)
+- products (المنتجات)
+- invoices (الفواتير)
+- invoice_items (عناصر الفاتورة)
+- activity_log (سجل النشاط)
+- settings (الإعدادات)</p>
+<p><strong>Roles &amp; Permissions:</strong>
+| Role | POS | Invoices | Inventory | Reports | Users | Settings |
+|------|-----|----------|-----------|---------|-------|----------|
+| Owner | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| POS Clerk | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Inventory Manager | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Viewer | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ |</p>
+<p><strong>الملف:</strong> <code>projects/codester-inc/fatura/architecture.md</code></p>
+<h3 id="4-cost-analysis-accountant-gemini-31-pro-high">✅ المرحلة 4: Cost Analysis (Accountant — gemini-3.1-pro-high)</h3>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التكلفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Play Developer</td>
+<td>$25 (مرة واحدة)</td>
+</tr>
+<tr>
+<td>App Store Developer</td>
+<td>$99/سنة (اختياري)</td>
+</tr>
+<tr>
+<td>Hosting/Server</td>
+<td>$0/شهر</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>$0 (local SQLite)</td>
+</tr>
+<tr>
+<td>Google Drive API</td>
+<td>$0 (free tier)</td>
+</tr>
+<tr>
+<td><strong>الإجمالي</strong></td>
+<td><strong>$25 + $0/شهر</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>مقارنة بالمنافسين:</strong>
+- QuickBooks: $30-200/شهر
+- Foodics: $50-150/شهر
+- <strong>فاتورة: $0/شهر</strong> 🟢</p>
+<h3 id="5-compliance-check-legal-claude-sonnet-4-6">✅ المرحلة 5: Compliance Check (Legal — claude-sonnet-4-6)</h3>
+<p><strong>الفواتير الإلكترونية:</strong>
+- البيزنس &lt; 250,000 ج.م/سنة → معفي ✅
+- التطبيق مش محتاج اعتماد من الضرائب
+- تصدير ETA كـ Phase 2</p>
+<p><strong>حماية البيانات (PDPL — قانون 151):</strong>
+- ⚠️ لازم consent mechanism لأرقام العملاء
+- ⚠️ Google Drive = cross-border transfer → local backup كبديل افتراضي
+- لازم Privacy Policy + ToS</p>
+<p><strong>تعديلات مطلوبة:</strong>
+- إضافة US-023: consent mechanism (Must)
+- تعديل US-016: local backup افتراضي + Google Drive optional
+- Privacy Policy + ToS في onboarding</p>
+<h3 id="6-feasibility-study-business-analyst-claude-sonnet-4-6">✅ المرحلة 6: Feasibility Study (Business Analyst — claude-sonnet-4-6)</h3>
+<p><strong>SWOT Analysis:</strong>
+| Strengths | Weaknesses |
+|-----------|-----------|
+| $0/شهر، offline-first | لا مزامنة بين أجهزة |
+| عربي-first، RTL | لا فريق مبيعات |
+| كل packages مجانية | لا دخل حالياً |</p>
+<table>
+<thead>
+<tr>
+<th>Opportunities</th>
+<th>Threats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>98M مستخدم إنترنت</td>
+<td>QuickBooks ينزل نسخة مجانية</td>
+</tr>
+<tr>
+<td>لا بديل عربي مجاني</td>
+<td>Foodics ينزل plan مخفض</td>
+</tr>
+<tr>
+<td>First-mover</td>
+<td>نسخ تقليد</td>
+</tr>
+</tbody>
+</table>
+<p><strong>القرار النهائي:</strong> ✅ <strong>GO</strong> 🟢</p>
+<hr />
+<h2 id="3-owner-abdelrahman">3. ملاحظات الـ Owner (Abdelrahman)</h2>
+<h3 id="1-roles-permissions">ملاحظة 1: Roles &amp; Permissions</h3>
+<p><strong>الطلب:</strong> إضافة نظام مستخدمين وصلاحيات (Owner، POS Clerk، Inventory Manager، Viewer)
+<strong>الحالة:</strong> ✅ تم إضافة US-017 إلى US-022</p>
+<h3 id="2-decision-making">ملاحظة 2: Decision Making</h3>
+<p><strong>الطلب:</strong> الـ Owner عايز يكون مشارك في كل قرار (features، quality، spec)
+<strong>الحالة:</strong> ⏸️ يتم إيقاف التنفيذ مؤقتاً لعمل PRD + checkpoint مع الـ Owner</p>
+<hr />
+<h2 id="4-pending">4. الخطوات التالية (Pending)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>الخطوة</th>
+<th>المسؤول</th>
+<th>الحالة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>PRD + Owner Review</td>
+<td>المدير العام + Owner</td>
+<td>⏸️ معلق</td>
+</tr>
+<tr>
+<td>2</td>
+<td>UI/UX Wireframes</td>
+<td>UI/UX Designer</td>
+<td>⏳ بانتظار</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Execution Plan</td>
+<td>Team Lead</td>
+<td>⏳ بانتظار</td>
+</tr>
+<tr>
+<td>4</td>
+<td>التنفيذ</td>
+<td>Executor</td>
+<td>⏳ بانتظار</td>
+</tr>
+<tr>
+<td>5</td>
+<td>مراجعة الكود</td>
+<td>Reviewer</td>
+<td>⏳ بانتظار</td>
+</tr>
+<tr>
+<td>6</td>
+<td>اختبار</td>
+<td>QA Tester</td>
+<td>⏳ بانتظار</td>
+</tr>
+<tr>
+<td>7</td>
+<td>نشر</td>
+<td>DevOps</td>
+<td>⏳ بانتظار</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. الملفات المتاحة</h2>
+<table>
+<thead>
+<tr>
+<th>الملف</th>
+<th>المسار</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>دراسة السوق</td>
+<td><code>projects/codester-inc/market-research.md</code></td>
+</tr>
+<tr>
+<td>User Stories</td>
+<td><code>projects/codester-inc/fatura/user-stories.md</code></td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td><code>projects/codester-inc/fatura/architecture.md</code></td>
+</tr>
+<tr>
+<td>تقرير شامل (هذا الملف)</td>
+<td><code>projects/codester-inc/fatura/status-report.html</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. التكلفة الإجمالية حتى الآن</h2>
+<table>
+<thead>
+<tr>
+<th>البند</th>
+<th>التكلفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>التطوير</td>
+<td>$0 (AI-assisted)</td>
+</tr>
+<tr>
+<td>الاستضافة</td>
+<td>$0 (ngrok free + local)</td>
+</tr>
+<tr>
+<td>الأدوات</td>
+<td>$0 (كلها open-source)</td>
+</tr>
+<tr>
+<td><strong>الإجمالي</strong></td>
+<td><strong>$0</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Codester-inc © 2026 — مجاني للفئات المحتاجة 🦾</em></p>
+</div>
+<div class="footer">Codester-inc © 2026 — مجاني للفئات المحتاجة 🦾</div>
+</body>
+</html>

@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فاتورة — Visual Mockups</title>
+<style>
+:root {
+  --bg: #0a0e1a;
+  --surface: #141929;
+  --elevated: #1e2538;
+  --cyan: #00d9ff;
+  --purple: #6c5ce7;
+  --text: #f0f4ff;
+  --muted: #8b95a7;
+  --success: #00e676;
+  --warning: #ffb74d;
+  --error: #ff5252;
+  --divider: #2a3142;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 2px solid var(--cyan);
+  margin-bottom: 30px;
+}
+.header h1 { color: var(--cyan); font-size: 1.8em; }
+.header p { color: var(--muted); }
+.section-title {
+  color: var(--cyan);
+  font-size: 1.2em;
+  margin: 40px 0 15px;
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 8px;
+}
+
+/* Phone frame */
+.phone-frame {
+  width: 380px;
+  margin: 0 auto 30px;
+  background: var(--surface);
+  border-radius: 32px;
+  border: 3px solid #2a3142;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0,217,255,0.1);
+}
+.phone-screen {
+  background: var(--bg);
+  min-height: 680px;
+  padding: 0;
+  position: relative;
+}
+.phone-statusbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px 8px;
+  font-size: 0.75em;
+  color: var(--muted);
+}
+.phone-content { padding: 0 16px 80px; }
+
+/* Bottom nav */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 16px;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.65em;
+  cursor: pointer;
+}
+.nav-item.active { color: var(--cyan); }
+.nav-item.pos {
+  background: var(--cyan);
+  color: var(--bg);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  justify-content: center;
+  margin-top: -20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0,217,255,0.4);
+}
+.nav-item.pos span { font-size: 0.6em; }
+.nav-icon { font-size: 1.3em; }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px 0;
+}
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--divider);
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin: 5px 0;
+}
+.btn-icon {
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.85em;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Inputs */
+.input-field {
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  padding: 14px;
+  width: 100%;
+  color: var(--text);
+  font-size: 0.95em;
+  margin: 6px 0;
+}
+.input-label {
+  font-size: 0.8em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.chip {
+  display: inline-block;
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85em;
+  margin: 4px;
+  cursor: pointer;
+}
+.chip.selected {
+  background: var(--cyan);
+  color: var(--bg);
+  border-color: var(--cyan);
+}
+
+/* Progress dots */
+.progress-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--divider);
+}
+.dot.active { background: var(--cyan); }
+
+/* PIN pad */
+.pin-dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.pin-dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--cyan);
+}
+.pin-dot.filled { background: var(--cyan); }
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 280px;
+  margin: 20px auto;
+}
+.numpad-key {
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+/* POS styles */
+.pos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 1.1em;
+}
+.cart-total.grand { font-weight: bold; font-size: 1.3em; color: var(--cyan); }
+.pay-methods {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.pay-method {
+  flex: 1;
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+.pay-method.selected {
+  background: var(--cyan);
+  color: var(--bg);
+  border-color: var(--cyan);
+}
+
+/* Invoice card */
+.invoice-card {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 8px 0;
+}
+.invoice-card .inv-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.invoice-card .inv-meta {
+  font-size: 0.8em;
+  color: var(--muted);
+}
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+}
+.badge.success { background: rgba(0,230,118,0.15); color: var(--success); }
+.badge.warning { background: rgba(255,183,77,0.15); color: var(--warning); }
+.badge.error { background: rgba(255,82,82,0.15); color: var(--error); }
+
+/* Product card */
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 8px 0;
+}
+.product-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 4px;
+  margin: 12px 0;
+}
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.85em;
+  color: var(--muted);
+  cursor: pointer;
+}
+.tab.active {
+  background: var(--elevated);
+  color: var(--cyan);
+}
+
+/* FAB */
+.fab {
+  position: absolute;
+  bottom: 90px;
+  left: 16px;
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  border-radius: 16px;
+  padding: 14px 20px;
+  font-weight: bold;
+  font-size: 0.9em;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,217,255,0.3);
+}
+
+/* Chart bar */
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+  padding: 10px 0;
+}
+.chart-bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--cyan), var(--purple));
+  border-radius: 4px 4px 0 0;
+  min-height: 10px;
+}
+
+/* Roles screen */
+.role-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+}
+.role-card.selected {
+  border-color: var(--cyan);
+  background: rgba(0,217,255,0.05);
+}
+
+/* Grid for multiple phones */
+.phones-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.phone-wrapper { text-align: center; }
+.phone-label {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-top: 8px;
+}
+
+/* User flow */
+.flow-step {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  text-align: center;
+}
+.flow-arrow {
+  color: var(--cyan);
+  text-align: center;
+  font-size: 1.5em;
+  margin: 4px 0;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px;
+  font-size: 0.85em;
+  border-top: 1px solid var(--divider);
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🎨 فاتورة — Visual Mockups</h1>
+  <p>Codester-inc — 11 شاشة بـ design بصري تقريبي</p>
+</div>
+
+<div class="container">
+
+<!-- ============ SCREEN 1: ONBOARDING ============ -->
+<div class="section-title">1️⃣ Onboarding — إعداد المتجر</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="text-align:center; margin:20px 0">
+            <div style="font-size:2em">🦾</div>
+            <div style="color:var(--cyan); font-size:1.5em; font-weight:bold">فاتورة</div>
+            <div style="color:var(--muted); font-size:0.8em">Step 1/3</div>
+          </div>
+          <div class="progress-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div style="text-align:center; margin:16px 0; color:var(--muted); font-size:0.9em">
+            أهلاً بك! 👋 لنُجهّز متجرك في ٣ خطوات
+          </div>
+          <div class="input-label">اسم المتجر *</div>
+          <div class="input-field" style="color:var(--muted)">مثال: كشك السعادة</div>
+          <div class="input-label" style="margin-top:12px">نوع المتجر</div>
+          <div style="display:flex; gap:6px; flex-wrap:wrap">
+            <span class="chip selected">كشك</span>
+            <span class="chip">متجر</span>
+            <span class="chip">صناع يدوي</span>
+            <span class="chip">أخرى</span>
+          </div>
+          <button class="btn-primary" style="margin-top:20px">متابعة →</button>
+          <button class="btn-secondary">تخطي — ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">Step 1 — اسم + نوع</div>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="text-align:center; margin:20px 0">
+            <div style="font-size:2em">🦾</div>
+            <div style="color:var(--cyan); font-size:1.5em; font-weight:bold">فاتورة</div>
+            <div style="color:var(--muted); font-size:0.8em">Step 2/3</div>
+          </div>
+          <div class="progress-dots">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="input-label">العنوان (اختياري)</div>
+          <div class="input-field" style="color:var(--muted)">شارع، مدينة</div>
+          <div class="input-label" style="margin-top:12px">رقم الهاتف (اختياري)</div>
+          <div class="input-field" style="color:var(--muted)">01xxxxxxxxx</div>
+          <div class="input-label" style="margin-top:12px">العملة</div>
+          <div class="input-field">جنيه مصري ▼</div>
+          <div style="display:flex; gap:8px; margin-top:16px">
+            <button class="btn-secondary" style="flex:1">← رجوع</button>
+            <button class="btn-primary" style="flex:1">متابعة →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">Step 2 — عنوان + عملة</div>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="text-align:center; margin:20px 0">
+            <div style="font-size:2em">🦾</div>
+            <div style="color:var(--cyan); font-size:1.5em; font-weight:bold">فاتورة</div>
+            <div style="color:var(--muted); font-size:0.8em">Step 3/3</div>
+          </div>
+          <div class="progress-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot active"></div>
+          </div>
+          <div class="input-label">هل تفرض ضريبة؟</div>
+          <div style="display:flex; gap:8px; margin:8px 0">
+            <span class="chip">لا</span>
+            <span class="chip selected">نعم</span>
+          </div>
+          <div class="input-label">نسبة الضريبة %</div>
+          <div class="input-field">14</div>
+          <div class="input-label" style="margin-top:16px">PIN المالك (4 أرقام)</div>
+          <div class="pin-dots">
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot"></div>
+          </div>
+          <button class="btn-primary" style="margin-top:10px">ابدأ البيع 🎉</button>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">Step 3 — ضريبة + PIN</div>
+  </div>
+</div>
+
+<!-- ============ SCREEN 2: PIN LOGIN ============ -->
+<div class="section-title">2️⃣ PIN Login — دخول الموظفين</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content" style="padding-top:30px">
+          <div style="text-align:center; margin:20px 0">
+            <div style="font-size:2em">🦾</div>
+            <div style="color:var(--cyan); font-size:1.5em; font-weight:bold">فاتورة</div>
+          </div>
+          <div style="text-align:center; color:var(--muted); margin:16px 0">أدخل PIN الكود</div>
+          <div class="pin-dots">
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+          </div>
+          <div class="numpad">
+            <div class="numpad-key">1</div>
+            <div class="numpad-key">2</div>
+            <div class="numpad-key">3</div>
+            <div class="numpad-key">4</div>
+            <div class="numpad-key">5</div>
+            <div class="numpad-key">6</div>
+            <div class="numpad-key">7</div>
+            <div class="numpad-key">8</div>
+            <div class="numpad-key">9</div>
+            <div class="numpad-key"></div>
+            <div class="numpad-key">0</div>
+            <div class="numpad-key">⌫</div>
+          </div>
+          <div style="text-align:center; color:var(--muted); font-size:0.8em; margin-top:16px">── من أنت؟ ──</div>
+          <div class="role-selector">
+            <div class="role-card selected">
+              <span style="font-size:1.5em">👨‍💼</span>
+              <div><div>Owner</div><div style="font-size:0.75em;color:var(--muted)">كل الصلاحيات</div></div>
+            </div>
+            <div class="role-card">
+              <span style="font-size:1.5em">💰</span>
+              <div><div>POS Clerk</div><div style="font-size:0.75em;color:var(--muted)">مبيعات + فواتير</div></div>
+            </div>
+            <div class="role-card">
+              <span style="font-size:1.5em">📦</span>
+              <div><div>Inventory Manager</div><div style="font-size:0.75em;color:var(--muted)">مخزون فقط</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">PIN Login + Role Selector</div>
+  </div>
+</div>
+
+<!-- ============ SCREEN 3: POS ============ -->
+<div class="section-title">3️⃣ POS — شاشة البيع الرئيسية</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div class="pos-header">
+            <div><span style="font-size:1.2em">⚡</span> <span style="color:var(--cyan);font-weight:bold">POS</span></div>
+            <div style="color:var(--muted);font-size:0.85em">إجمالي: <span style="color:var(--cyan);font-weight:bold">125.00</span></div>
+          </div>
+          <div class="input-field" style="color:var(--muted)">🔍 بحث / اسم المنتج...</div>
+          <button class="btn-secondary" style="margin:8px 0">📷 امسح الباركود</button>
+          <div style="color:var(--muted);font-size:0.85em;margin:12px 0 6px;display:flex;justify-content:space-between">
+            <span>السلة (3)</span>
+            <span>🗑️ مسح</span>
+          </div>
+          <div class="card">
+            <div class="cart-item">
+              <div>منتج A</div>
+              <div>×2 · <span style="color:var(--cyan)">50.00</span></div>
+            </div>
+            <div class="cart-item">
+              <div>منتج B</div>
+              <div>×1 · <span style="color:var(--cyan)">75.00</span></div>
+            </div>
+            <div class="cart-item">
+              <div>منتج C</div>
+              <div>×1 · <span style="color:var(--muted)">0.00</span></div>
+            </div>
+          </div>
+          <div style="padding:8px 0">
+            <div class="cart-total"><span>الإجمالي</span><span>125.00</span></div>
+            <div class="cart-total"><span>ضريبة (14%)</span><span>17.50</span></div>
+            <div class="cart-total grand"><span>المطلوب</span><span>142.50</span></div>
+          </div>
+          <div class="pay-methods">
+            <div class="pay-method selected">💰 نقد</div>
+            <div class="pay-method">💳 بطاقة</div>
+            <div class="pay-method">📱 محفظة</div>
+          </div>
+          <div class="input-label">المدفوع</div>
+          <div class="input-field">150.00</div>
+          <div style="color:var(--success);font-size:0.9em;text-align:left">الباقي: 7.50</div>
+          <button class="btn-primary" style="margin-top:12px">✅ إتمام البيع</button>
+        </div>
+        <div class="bottom-nav">
+          <div class="nav-item"><span class="nav-icon">📦</span><span>مخزون</span></div>
+          <div class="nav-item"><span class="nav-icon">🧾</span><span>فواتير</span></div>
+          <div class="nav-item pos"><span>⚡</span><span>POS</span></div>
+          <div class="nav-item"><span class="nav-icon">📊</span><span>تقارير</span></div>
+          <div class="nav-item"><span class="nav-icon">⚙️</span><span>إعدادات</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">POS — شاشة البيع</div>
+  </div>
+
+  <!-- POS Success -->
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content" style="padding-top:60px;text-align:center">
+          <div style="font-size:3em;margin:20px 0">✅</div>
+          <div style="color:var(--success);font-size:1.3em;font-weight:bold">تم البيع!</div>
+          <div style="color:var(--muted);margin:8px 0">فاتورة #INV-0042</div>
+          <div style="font-size:2em;color:var(--cyan);font-weight:bold;margin:16px 0">142.50 ج.م</div>
+          <div style="display:flex;gap:8px;margin:20px 0">
+            <button class="btn-icon" style="flex:1">📤 مشاركة</button>
+            <button class="btn-icon" style="flex:1">🖨️ طباعة</button>
+          </div>
+          <button class="btn-primary">بيع جديد ⚡</button>
+          <button class="btn-secondary">عرض الفاتورة</button>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">POS — بعد البيع</div>
+  </div>
+</div>
+
+<!-- ============ SCREEN 4: INVOICES ============ -->
+<div class="section-title">4️⃣ الفواتير — قائمة + تفاصيل</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0">
+            <div style="font-size:1.2em;font-weight:bold">🧾 الفواتير</div>
+            <span style="font-size:1.2em">🔍</span>
+          </div>
+          <div class="tabs">
+            <div class="tab active">اليوم</div>
+            <div class="tab">أسبوع</div>
+            <div class="tab">شهر</div>
+          </div>
+          <div class="invoice-card">
+            <div class="inv-header">
+              <div style="font-weight:bold">#INV-0042</div>
+              <span class="badge success">✅ مكتملة</span>
+            </div>
+            <div class="inv-meta">اليوم 14:30 · 3 منتجات · 142.50 ج.م</div>
+            <div style="font-size:0.8em;color:var(--cyan)">💰 نقد</div>
+          </div>
+          <div class="invoice-card">
+            <div class="inv-header">
+              <div style="font-weight:bold">#INV-0041</div>
+              <span class="badge success">✅ مكتملة</span>
+            </div>
+            <div class="inv-meta">اليوم 12:15 · 1 منتج · 50.00 ج.م</div>
+            <div style="font-size:0.8em;color:var(--cyan)">💳 بطاقة</div>
+          </div>
+          <div class="invoice-card">
+            <div class="inv-header">
+              <div style="font-weight:bold">#INV-0040</div>
+              <span class="badge warning">📝 مسودة</span>
+            </div>
+            <div class="inv-meta">أمس 18:00 · 5 منتجات · 320.00 ج.م</div>
+          </div>
+          <div class="invoice-card">
+            <div class="inv-header">
+              <div style="font-weight:bold">#INV-0039</div>
+              <span class="badge success">✅ مكتملة</span>
+            </div>
+            <div class="inv-meta">أمس 15:20 · 2 منتجات · 85.00 ج.م</div>
+          </div>
+        </div>
+        <div class="bottom-nav">
+          <div class="nav-item"><span class="nav-icon">📦</span><span>مخزون</span></div>
+          <div class="nav-item active"><span class="nav-icon">🧾</span><span>فواتير</span></div>
+          <div class="nav-item pos"><span>⚡</span><span>POS</span></div>
+          <div class="nav-item"><span class="nav-icon">📊</span><span>تقارير</span></div>
+          <div class="nav-item"><span class="nav-icon">⚙️</span><span>إعدادات</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">قائمة الفواتير</div>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="display:flex;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid var(--divider)">
+            <span style="font-size:1.2em">←</span>
+            <div style="font-weight:bold">🧾 #INV-0042</div>
+          </div>
+          <div style="text-align:center;padding:16px 0">
+            <div style="font-weight:bold;font-size:1.1em">كشك السعادة</div>
+            <div style="color:var(--muted);font-size:0.8em">4 سبتمبر 2026 - 14:30</div>
+            <div style="color:var(--muted);font-size:0.8em">البائع: Owner</div>
+          </div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;font-size:0.85em;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--divider)">
+              <span>المنتج</span><span>الكمية</span><span>السعر</span>
+            </div>
+            <div class="cart-item"><span>منتج A</span><span>×2</span><span style="color:var(--cyan)">50.00</span></div>
+            <div class="cart-item"><span>منتج B</span><span>×1</span><span style="color:var(--cyan)">75.00</span></div>
+            <div class="cart-item"><span>منتج C</span><span>×1</span><span style="color:var(--muted)">0.00</span></div>
+          </div>
+          <div style="padding:8px 0">
+            <div class="cart-total"><span>الإجمالي</span><span>125.00</span></div>
+            <div class="cart-total"><span>ضريبة (14%)</span><span>17.50</span></div>
+            <div class="cart-total grand"><span>المطلوب</span><span>142.50</span></div>
+          </div>
+          <div style="display:flex;gap:8px;margin:16px 0">
+            <button class="btn-icon" style="flex:1">📤 مشاركة</button>
+            <button class="btn-icon" style="flex:1">🖨️ طباعة</button>
+            <button class="btn-icon" style="flex:1;color:var(--error)">🗑️ حذف</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">تفاصيل الفاتورة</div>
+  </div>
+</div>
+
+<!-- ============ SCREEN 5: INVENTORY ============ -->
+<div class="section-title">5️⃣ المخزون — قائمة + إضافة منتج</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0">
+            <div style="font-size:1.2em;font-weight:bold">📦 المخزون</div>
+            <span style="font-size:1.2em">🔍</span>
+          </div>
+          <button class="btn-primary" style="margin:8px 0">➕ إضافة منتج</button>
+          <div class="product-card">
+            <div class="product-icon">🥤</div>
+            <div style="flex:1">
+              <div style="font-weight:bold">منتج A</div>
+              <div style="font-size:0.8em;color:var(--muted)">barcode: 123456</div>
+            </div>
+            <div style="text-align:left">
+              <div style="color:var(--cyan);font-weight:bold">50.00</div>
+              <div style="font-size:0.8em;color:var(--success)">الكمية: 25</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🍫</div>
+            <div style="flex:1">
+              <div style="font-weight:bold">منتج B</div>
+              <div style="font-size:0.8em;color:var(--muted)">barcode: 789012</div>
+            </div>
+            <div style="text-align:left">
+              <div style="color:var(--cyan);font-weight:bold">75.00</div>
+              <div style="font-size:0.8em;color:var(--warning)">⚠️ الكمية: 3</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-icon">🧹</div>
+            <div style="flex:1">
+              <div style="font-weight:bold">منتج C</div>
+              <div style="font-size:0.8em;color:var(--muted)">بدون باركود</div>
+            </div>
+            <div style="text-align:left">
+              <div style="color:var(--cyan);font-weight:bold">0.00</div>
+              <div style="font-size:0.8em;color:var(--error)">❌ نفد</div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-nav">
+          <div class="nav-item active"><span class="nav-icon">📦</span><span>مخزون</span></div>
+          <div class="nav-item"><span class="nav-icon">🧾</span><span>فواتير</span></div>
+          <div class="nav-item pos"><span>⚡</span><span>POS</span></div>
+          <div class="nav-item"><span class="nav-icon">📊</span><span>تقارير</span></div>
+          <div class="nav-item"><span class="nav-icon">⚙️</span><span>إعدادات</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">قائمة المخزون</div>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="display:flex;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid var(--divider)">
+            <span style="font-size:1.2em">←</span>
+            <div style="font-weight:bold">إضافة منتج</div>
+          </div>
+          <div class="input-label">اسم المنتج *</div>
+          <div class="input-field" style="color:var(--muted)">مثال: مياه معدنية</div>
+          <div class="input-label" style="margin-top:12px">الباركود</div>
+          <div style="display:flex;gap:8px">
+            <div class="input-field" style="flex:1;color:var(--muted)">أدخل أو امسح</div>
+            <button class="btn-icon">📷</button>
+          </div>
+          <div class="input-label" style="margin-top:12px">السعر *</div>
+          <div class="input-field">0.00</div>
+          <div class="input-label" style="margin-top:12px">الكمية</div>
+          <div class="input-field">0</div>
+          <div class="input-label" style="margin-top:12px">الحد الأدنى للتنبيه</div>
+          <div class="input-field">5</div>
+          <div class="input-label" style="margin-top:12px">الفئة</div>
+          <div class="input-field" style="color:var(--muted)">اختر... ▼</div>
+          <div class="input-label" style="margin-top:12px">الوحدة</div>
+          <div style="display:flex;gap:6px">
+            <span class="chip selected">قطعة</span>
+            <span class="chip">كيلو</span>
+            <span class="chip">علبة</span>
+          </div>
+          <button class="btn-primary" style="margin-top:16px">💾 حفظ</button>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">إضافة/تعديل منتج</div>
+  </div>
+</div>
+
+<!-- ============ SCREEN 6: REPORTS ============ -->
+<div class="section-title">6️⃣ التقارير</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="font-size:1.2em;font-weight:bold;padding:12px 0">📊 التقارير</div>
+          <div class="tabs">
+            <div class="tab active">اليوم</div>
+            <div class="tab">أسبوع</div>
+            <div class="tab">شهر</div>
+          </div>
+          <div class="card">
+            <div style="font-weight:bold;margin-bottom:8px">تقرير اليوم · 4 سبتمبر</div>
+            <div style="color:var(--muted);font-size:0.85em;margin-bottom:12px">📈 المبيعات اليومية</div>
+            <div class="chart">
+              <div class="chart-bar" style="height:30%"></div>
+              <div class="chart-bar" style="height:50%"></div>
+              <div class="chart-bar" style="height:40%"></div>
+              <div class="chart-bar" style="height:70%"></div>
+              <div class="chart-bar" style="height:90%"></div>
+              <div class="chart-bar" style="height:60%"></div>
+              <div class="chart-bar" style="height:45%"></div>
+              <div class="chart-bar" style="height:80%"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.75em;color:var(--muted);margin-top:4px">
+              <span>9 ص</span><span>12 ظ</span><span>3 م</span><span>6 م</span><span>9 م</span>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+              <span style="color:var(--muted)">الإجمالي</span>
+              <span style="color:var(--cyan);font-weight:bold;font-size:1.2em">1,245.00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+              <span style="color:var(--muted)">عدد الفواتير</span>
+              <span>12</span>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="color:var(--muted)">متوسط الفاتورة</span>
+              <span>104</span>
+            </div>
+          </div>
+          <div class="card">
+            <div style="font-weight:bold;margin-bottom:8px">أكثر المنتجات مبيعاً</div>
+            <div style="display:flex;justify-content:space-between;padding:4px 0"><span>1. منتج A</span><span style="color:var(--cyan)">8x</span></div>
+            <div style="display:flex;justify-content:space-between;padding:4px 0"><span>2. منتج B</span><span style="color:var(--cyan)">5x</span></div>
+            <div style="display:flex;justify-content:space-between;padding:4px 0"><span>3. منتج C</span><span style="color:var(--cyan)">3x</span></div>
+          </div>
+          <button class="btn-secondary">📤 تصدير PDF</button>
+        </div>
+        <div class="bottom-nav">
+          <div class="nav-item"><span class="nav-icon">📦</span><span>مخزون</span></div>
+          <div class="nav-item"><span class="nav-icon">🧾</span><span>فواتير</span></div>
+          <div class="nav-item pos"><span>⚡</span><span>POS</span></div>
+          <div class="nav-item active"><span class="nav-icon">📊</span><span>تقارير</span></div>
+          <div class="nav-item"><span class="nav-icon">⚙️</span><span>إعدادات</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">التقارير + Charts</div>
+  </div>
+
+  <!-- Settings -->
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="font-size:1.2em;font-weight:bold;padding:12px 0">⚙️ الإعدادات</div>
+          <div style="color:var(--muted);font-size:0.8em;margin:8px 0">── بيانات المتجر ──</div>
+          <div class="card">
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">اسم المتجر</span><span>كشك السعادة</span></div>
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">نوع المتجر</span><span>كشك</span></div>
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">الهاتف</span><span>01xxx</span></div>
+          </div>
+          <div style="color:var(--muted);font-size:0.8em;margin:8px 0">── اللغة والعملة ──</div>
+          <div class="card">
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">اللغة</span><span>العربية ▼</span></div>
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">العملة</span><span>جنيه ▼</span></div>
+          </div>
+          <div style="color:var(--muted);font-size:0.8em;margin:8px 0">── الضريبة ──</div>
+          <div class="card">
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">مفعّلة</span><span style="color:var(--success)">✅</span></div>
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">النسبة</span><span>14%</span></div>
+          </div>
+          <div style="color:var(--muted);font-size:0.8em;margin:8px 0">── النسخ الاحتياطي ──</div>
+          <div class="card">
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">Google Drive</span><span style="color:var(--warning)">غير مربوط</span></div>
+            <div class="card-row"><span style="color:var(--muted);font-size:0.85em">نسخة محلية</span><span style="color:var(--success)">✅ مفعّلة</span></div>
+          </div>
+          <div style="color:var(--muted);font-size:0.8em;margin:8px 0">── الطباعة ──</div>
+          <button class="btn-secondary">🔗 ربط طابعة Bluetooth</button>
+        </div>
+        <div class="bottom-nav">
+          <div class="nav-item"><span class="nav-icon">📦</span><span>مخزون</span></div>
+          <div class="nav-item"><span class="nav-icon">🧾</span><span>فواتير</span></div>
+          <div class="nav-item pos"><span>⚡</span><span>POS</span></div>
+          <div class="nav-item"><span class="nav-icon">📊</span><span>تقارير</span></div>
+          <div class="nav-item active"><span class="nav-icon">⚙️</span><span>إعدادات</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">الإعدادات</div>
+  </div>
+</div>
+
+<!-- ============ SCREEN 7: USER MANAGEMENT ============ -->
+<div class="section-title">7️⃣ إدارة الموظفين + سجل النشاط</div>
+<div class="phones-grid">
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0">
+            <div style="font-size:1.2em;font-weight:bold">👥 إدارة الموظفين</div>
+          </div>
+          <button class="btn-primary" style="margin:8px 0">➕ إضافة موظف</button>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:2em">👨‍💼</span>
+              <div style="flex:1">
+                <div style="font-weight:bold">Owner (أنت)</div>
+                <div style="font-size:0.8em;color:var(--muted)">كل الصلاحيات</div>
+              </div>
+              <span class="badge success">✅ نشط</span>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:2em">💰</span>
+              <div style="flex:1">
+                <div style="font-weight:bold">أحمد</div>
+                <div style="font-size:0.8em;color:var(--muted)">POS + فواتير</div>
+              </div>
+              <span class="badge success">✅ نشط</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button class="btn-icon" style="flex:1;font-size:0.8em">✏️ تعديل</button>
+              <button class="btn-icon" style="flex:1;font-size:0.8em;color:var(--error)">🗑️ حذف</button>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="font-size:2em">📦</span>
+              <div style="flex:1">
+                <div style="font-weight:bold">محمود</div>
+                <div style="font-size:0.8em;color:var(--muted)">مخزون فقط</div>
+              </div>
+              <span class="badge warning">⏸️ معطّل</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">إدارة الموظفين</div>
+  </div>
+
+  <div class="phone-wrapper">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <div class="phone-statusbar"><span>9:41</span><span>📶 🔋</span></div>
+        <div class="phone-content">
+          <div style="font-size:1.2em;font-weight:bold;padding:12px 0">📋 سجل النشاط</div>
+          <div class="tabs">
+            <div class="tab active">الكل</div>
+            <div class="tab">بيع</div>
+            <div class="tab">مخزون</div>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:1.5em">💰</span>
+              <div style="flex:1">
+                <div><b>أحمد</b> — بيع #INV-0042</div>
+                <div style="font-size:0.8em;color:var(--muted)">اليوم 14:30 · 142.50 ج.م</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:1.5em">📦</span>
+              <div style="flex:1">
+                <div><b>محمود</b> — تعديل منتج A</div>
+                <div style="font-size:0.8em;color:var(--muted)">اليوم 13:00 · السعر: 40→50</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:1.5em">👨‍💼</span>
+              <div style="flex:1">
+                <div><b>Owner</b> — تسجيل دخول</div>
+                <div style="font-size:0.8em;color:var(--muted)">اليوم 09:00</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:1.5em">💰</span>
+              <div style="flex:1">
+                <div><b>أحمد</b> — بيع #INV-0041</div>
+                <div style="font-size:0.8em;color:var(--muted)">اليوم 12:15 · 50.00 ج.م</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phone-label">سجل النشاط</div>
+  </div>
+</div>
+
+<!-- ============ USER FLOW ============ -->
+<div class="section-title">🔄 User Flow — من أول فتح لأول بيع</div>
+<div style="max-width:400px;margin:0 auto">
+  <div class="flow-step">📱 فتح التطبيق</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">أول مرة؟ ── نعم ──→ Onboarding (3 خطوات)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">🔑 PIN Login + اختيار الدور</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">🏠 Home Screen (حسب الدور)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">⚡ POS (full screen)</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">📷 مسح barcode / بحث يدوي</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">🛒 إضافة للسلة</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">💰 اختيار طريقة الدفع</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">✅ إتمام البيع</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">📤 مشاركة / 🖨️ طباعة / ⚡ بيع جديد</div>
+</div>
+
+</div>
+<div class="footer">
+  Codester-inc © 2026 — مجاني للفئات المحتاجة 🦾<br>
+  🎨 UI/UX Designer — gemini-3.1-pro-high (agy)
+</div>
+</body>
+</html>

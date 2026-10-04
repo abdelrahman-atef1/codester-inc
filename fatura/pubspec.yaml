@@ -1,0 +1,106 @@
+name: fatura
+description: "فاتورة — POS + Invoices + Inventory for micro businesses"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+
+  # Database
+  drift: ^2.21.0
+  sqlite3_flutter_libs: ^0.5.28
+  path_provider: ^2.1.5
+  path: ^1.9.0
+
+  # Routing
+  go_router: ^14.6.2
+
+  # UI & Charts
+  fl_chart: ^0.70.2
+
+  # Barcode Scanning
+  mobile_scanner: ^6.0.4
+
+  # QR Code Generation
+  qr_flutter: ^4.1.0
+
+  # Local HTTP Server (shelf)
+  shelf: ^1.4.2
+  shelf_router: ^1.1.4
+
+  # mDNS / NSD registration
+  multicast_dns: ^0.3.2+6
+
+  # Firebase Cloud Messaging
+  firebase_core: ^3.8.1
+  firebase_messaging: ^15.1.6
+
+  # Local notifications (for FCM display when app is in foreground)
+  flutter_local_notifications: ^18.0.1
+
+  # PDF & Printing
+  pdf: ^3.11.2
+  printing: ^5.14.2
+
+  # Sharing
+  share_plus: ^10.1.4
+
+  # Bluetooth Printing (Post-MVP — disabled for now)
+  # flutter_receipt_printer: ^1.0.0
+
+  # Google Drive Backup
+  googleapis: ^13.2.0
+  google_sign_in: ^6.2.2
+
+  # Utils
+  intl: ^0.20.3
+  cupertino_icons: ^1.0.8
+  equatable: ^2.0.7
+  crypto: ^3.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # integration_test temporarily removed to fix release build
+  flutter_lints: ^5.0.0
+
+  # Code Generation
+  build_runner: ^2.4.14
+  drift_dev: ^2.21.2
+  # NOTE: riverpod_generator, custom_lint, riverpod_lint
+  # will be added in Phase 2 when analyzer version compatibility stabilizes
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo/Cairo-Bold.ttf
+          weight: 700
+    - family: Tajawal
+      fonts:
+        - asset: assets/fonts/Tajawal/Tajawal-Regular.ttf
+        - asset: assets/fonts/Tajawal/Tajawal-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Tajawal/Tajawal-Bold.ttf
+          weight: 700
